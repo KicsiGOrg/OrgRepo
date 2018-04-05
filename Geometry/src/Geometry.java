@@ -1,11 +1,11 @@
 public class Geometry {
 
-    public static void main(String[] args) {
+    public static void main (String[] args){
 
         String star = "*";
         String breakLine = "\n--------------------------------------------------------------------------------\n";
 
-        // Négyzet kirajzolása
+        // N�gyzet
         int squareWidth = 40;
         String stars = new String(new char[squareWidth]).replace("\0", star);
         for (int i = 1; i <= 20; i++) {
@@ -13,7 +13,7 @@ public class Geometry {
         }
         System.out.println(breakLine);
 
-        // Téglalap
+        // T�glalap
         int rectangleWidth = 80;
         String lines = new String(new char[rectangleWidth]).replace("\0", star);
         for (int i = 1; i <= 20; i++) {
@@ -47,7 +47,7 @@ public class Geometry {
         }
         System.out.println(breakLine);
 
-        // Trapéz
+        // Trap�z
         int trapezeWidth = 40, trapezeSkew = 20;
         for (int i = trapezeSkew; i >= 0; i--) {
             String trapezeStars = new String(new char[trapezeWidth]).replace("\0", star);
@@ -57,7 +57,7 @@ public class Geometry {
         }
         System.out.println(breakLine);
 
-        // Háromszög (Nem volt specifikálva, hogy hogyan nézzen ki a háromszög)
+        // H�romsz�g
         int triangleWidth = 1, triangleSkew = 20;
         for (int i = triangleSkew; i >= 0; i--) {
             String trinagleStars = new String(new char[triangleWidth]).replace("\0", star);
@@ -67,4 +67,3 @@ public class Geometry {
         }
     }
 }
-

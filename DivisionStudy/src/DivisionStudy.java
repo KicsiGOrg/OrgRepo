@@ -2,10 +2,10 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class DivisionStudy {
-
 	static boolean noDivisor = true;
 
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 
 		System.out.print("Kérem adjon meg egy számot: ");
 		Scanner scanner = new Scanner(System.in);
@@ -55,6 +55,11 @@ public class DivisionStudy {
 			}
 		}
 		scanner.close();
+		
+		long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		double seconds = (double)totalTime / 1000000000.0;
+		System.out.println(seconds);
 	}
 
 	private static boolean divisorTwo(int number) {
@@ -251,5 +256,5 @@ public class DivisionStudy {
 			beginIndexNumber += 3;
 			endIndexNumber += 3;
 		}
-	}
+	}	
 }

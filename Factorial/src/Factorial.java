@@ -1,18 +1,20 @@
-import java.util.Scanner;
 
 public class Factorial {
 
-    public static void main(String[] args) {
-        System.out.println("n! kiszámítása");
-        System.out.print("Kérem adjon meg egy számot: ");
-        Scanner number = new Scanner(System.in);
-        long n = number.nextLong();
-        long f = 1;
-        number.nextLine();
+	public static void main(String[] args) {
 
-        for (long i = 1; i <= n; i++)
-            f *= i;
-        System.out.println(n + "! = " + f);
-        number.close();
-    }
+		int[] originalNumberArrays = { 0, 1, 5, 7, 10 };
+		int[] numberArrays = { 0, 1, 5, 7, 10 };
+
+		for (int j = 0; numberArrays.length > j; j++) {
+			for (int i = numberArrays[j] - 1; i > 0; i--) {
+				numberArrays[j] = numberArrays[j] * i;
+			}
+			if (numberArrays[j] == 0) {
+				System.out.println(originalNumberArrays[j] + "! = 1");
+			} else {
+				System.out.println(originalNumberArrays[j] + "! = " + numberArrays[j]);
+			}
+		}
+	}
 }

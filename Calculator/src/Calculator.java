@@ -7,8 +7,7 @@ public class Calculator {
 
 	public static void main(String[] args) {
 
-		String menu = "SZÁMOLÓGÉP MENÜSOR\n" + "------------------\n" + "1 - Összeadás\n" + "2 - Kivonás\n"
-				+ "3 - Szorzás\n" + "4 - Osztás\n" + "5 - Kilépés\n";
+		String menu = "SZÁMOLÓGÉP MENÜSOR\n" + "------------------\n" + "1 - Összeadás\n" + "2 - Kivonás\n" + "3 - Szorzás\n" + "4 - Osztás\n" + "5 - Kilépés\n";
 		System.out.println("Üdvözlöm én a számológép vagyok!\n");
 		Scanner sc;
 		int menuNumber;
@@ -19,28 +18,37 @@ public class Calculator {
 			sc = new Scanner(System.in);
 			menuNumber = sc.nextInt();
 			sc.nextLine();
-			if(menuNumber == 5) {
-				byeBye();
-			}
-			else if (menuNumber > 0 && menuNumber < 5) {
-				getNumbers(sc);
-				if (menuNumber == 1) {
-					sumNumber(numberA, numberB);
-				} else if (menuNumber == 2) {
-					subNumber(numberA, numberB);
-				} else if (menuNumber == 3) {
-					mulNumber(numberA, numberB);
-				} else if (menuNumber == 4) {
-					divNumber(numberA, numberB);
-				} 
-			} else {
-				System.out.print("A megadott szám érvénytelen! Kérem adja meg a művelet számát: ");
-				menuNumber = sc.nextInt();
-				sc.nextLine();
-			}
+			functions(sc, menuNumber);
 		} while (menuNumber != 5);
 
 		sc.close();
+	}
+
+	private static void functions(Scanner sc, int menuNumber) {
+		switch (menuNumber) {
+		case 1:
+			getNumbers(sc);
+			add(numberA, numberB);
+			break;
+		case 2:
+			getNumbers(sc);
+			subtract(numberA, numberB);
+			break;
+		case 3:
+			getNumbers(sc);
+			multiply(numberA, numberB);
+			break;
+		case 4:
+			getNumbers(sc);
+			divide(numberA, numberB);
+			break;
+		case 5:
+			SayBye();
+			break;
+		default:
+			System.out.println("A megadott szám érvénytelen!\n");
+			break;
+		}
 	}
 
 	private static void getNumbers(Scanner sc) {
@@ -52,26 +60,26 @@ public class Calculator {
 		sc.nextLine();
 	}
 
-	private static void byeBye() {
+	private static void SayBye() {
 		System.out.println("Köszönöm, hogy igénybe vette a szolgáltatásaimat. \nViszont látásra!");
 	}
 
-	private static void divNumber(double numberA, double numberB) {
+	private static void divide(double numberA, double numberB) {
 		double numberC = numberA / numberB;
 		System.out.println("Az osztás eredménye: " + numberC + "\n");
 	}
 
-	private static void mulNumber(double numberA, double numberB) {
+	private static void multiply(double numberA, double numberB) {
 		double numberC = numberA * numberB;
 		System.out.println("A számok szorzata: " + numberC + "\n");
 	}
 
-	private static void subNumber(double numberA, double numberB) {
+	private static void subtract(double numberA, double numberB) {
 		double numberC = numberA - numberB;
 		System.out.println("A számok különbsége: " + numberC + "\n");
 	}
 
-	private static void sumNumber(double numberA, double numberB) {
+	private static void add(double numberA, double numberB) {
 		double numberC = numberA + numberB;
 		System.out.println("A számok összege: " + numberC + "\n");
 	}

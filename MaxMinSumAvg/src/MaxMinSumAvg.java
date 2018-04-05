@@ -9,7 +9,6 @@ public class MaxMinSumAvg {
 		int[] numberArray = new int[10];
 		Scanner sc = new Scanner(System.in);
 		int max = numberArray[0];
-		int min = max;
 		
 		for (int i = 0; i < numberArray.length; i++) {
 			System.out.print("Kérem adja meg a(z) " + numberIndex + " vizsgálandó számot: ");
@@ -28,6 +27,7 @@ public class MaxMinSumAvg {
 			}
 		}
 
+		int min = max;
 		for (int i = 0; i <= numberArray.length - 1; i++) {
 			if (numberArray[i] < min) {
 				min = numberArray[i];
