@@ -26,20 +26,17 @@
 /FizzBuzz.class
 /ForEachLoop.class
 /Geometry.class
+/Hanyados.class
 /HappyBirthday.class
 /HappyBirthdayArgs.class
 /HeadsOrTails.class
 /HelloWorld.class
 /IFTEST.class
-/Igazsagtabla.class
-/KamatosKamat.class
 /KezSzamAtlaga.class
 /LastDigitZero.class
 /LeapYear.class
 /LegkisebbSzam.class
-/Leptetes.class
 /MATEK.class
-/MathPow.class
 /MathRandom.class
 /Matrix.class
 /MaxMinSumAvg.class
@@ -58,7 +55,6 @@
 /PrimeNumberCanonicalShape.class
 /PrimeNumberChecker.class
 /PrimeNumberValidator.class
-/RandomNumber.class
 /Rectangle.class
 /Reservoir.class
 /SUM.class
@@ -66,7 +62,6 @@
 /SecondDegreeEquation.class
 /ShowHashAlgorithms.class
 /Stack.class
-/Szazlek.class
 /Szilveszter.class
 /TaxNumberGenerator.class
 /Teszt.class
