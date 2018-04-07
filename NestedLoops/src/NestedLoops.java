@@ -15,10 +15,6 @@ public class NestedLoops {
 				String x = strI.substring(1, strI.length() - 1);
 				for (int j = 0; j < 300; j++) {
 					if (x.equals("5") || x.equals("6") || x.equals("7") || x.equals("8")) {
-						numbers[j] = i;
-						System.out.println(numbers[j]);
-						break;
-					} else {
 						int lastDigit = i % 10;
 						if (lastDigit >= 2 && lastDigit <= 7) {
 							numbers[j] = i;
@@ -28,7 +24,6 @@ public class NestedLoops {
 					}
 				}
 			}
-		} 
-		while (i != max);
+		} while (i != max);
 	}
 }

@@ -1,4 +1,4 @@
-public class ABC {
+public class Abc {
 
 	static char character;
 	
