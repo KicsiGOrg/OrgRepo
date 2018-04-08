@@ -7,7 +7,7 @@ public class MaximumOfSomeNumbersOne {
 
 	public static void main(String[] args) {
 
-		double maxNumber = 0;
+		double maxNumber = Integer.MIN_VALUE;
 		System.out.println(
 				"Beírt számok maximumának kikeresése.\nA számok bevitele addig tart, amíg a felhasználó nem ad meg a konzolon 0-t.");
 		do {
