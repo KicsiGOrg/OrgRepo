@@ -13,7 +13,7 @@ public class Modulo {
 	}
 
 	private static void getNumber() {
-		System.out.print("Kérem adjon meg egy számot, amit öttel oszthatóra kerekítek: ");
+		System.out.print("KÃ©rem adjon meg egy szÃ¡mot, amit Ã¶ttel oszthatÃ³ra kerekÃ­tek: ");
 		sc = new Scanner(System.in);
 		number = sc.nextInt();
 		sc.nextLine();

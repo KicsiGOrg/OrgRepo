@@ -10,7 +10,7 @@ public class BinaryText {
 
 		greetingAndMenu();
 		do {
-			System.out.print("\nKérem válasszon a menübõl: ");
+			System.out.print("\nKÃ©rem vÃ¡lasszon a menÃ¼bÅ‘l: ");
 			sc = new Scanner(System.in);
 			menuNumber = sc.nextInt();
 			sc.nextLine();
@@ -23,10 +23,10 @@ public class BinaryText {
 				binaryToText();
 				break;
 			case 3:
-				System.out.println("\nKöszönöm, hogy igénybe vette a szolgálataimat :) " + "\nViszontlátásra!");
+				System.out.println("\nKÃ¶szÃ¶nÃ¶m, hogy igÃ©nybe vette a szolgÃ¡lataimat :) " + "\nViszontlÃ¡tÃ¡sra!");
 				break;
 			default:
-				System.out.println("Hibás menüpont");
+				System.out.println("HibÃ¡s menÃ¼pont");
 				break;
 			}
 		} while (menuNumber != 3);
@@ -34,9 +34,10 @@ public class BinaryText {
 	}
 
 	private static void binaryToText() {
-		System.out.print("Kérem írja ide a fordítandó bináris kódot (szóközök nélkül): ");
-		String input = sc.next();
-		sc.nextLine();
+		System.out.print("KÃ©rem Ã­rja ide a fordÃ­tandÃ³ BinÃ¡ris kÃ³dot: ");
+		String input = sc.nextLine();
+		//sc.nextLine();
+		input = input.replaceAll("\\s+","");
 		StringBuilder sb = new StringBuilder();
 		Arrays.stream(input.split("(?<=\\G.{8})")).forEach(s -> sb.append((char) Integer.parseInt(s, 2)));
 		Arrays.stream(input.split("(?<=\\G.{8})")).forEach(s -> System.out.print((char) Integer.parseInt(s, 2)));
@@ -44,15 +45,14 @@ public class BinaryText {
 	}
 
 	private static void greetingAndMenu() {
-		System.out.println("Üdvözlöm én a fordító vagyok!\nOlvasható formátumot fordítok át Bináris nyelvre vagy fordítva.\n");
-		System.out.println("               MENÜSOR\n" + "**********************************\n" + "1 - Szöveg fordítása Bináris kódra\n" + "2 - Bináris kód fordítása szövegre\n" + "3 - Kilépés");
+		System.out.println("ÃœdvÃ¶zlÃ¶m Ã©n a fordÃ­tÃ³ vagyok!\nOlvashatÃ³ formÃ¡tumot fordÃ­tok Ã¡t BinÃ¡ris nyelvre vagy fordÃ­tva.\n");
+		System.out.println("               MENÃœSOR\n" + "**********************************\n" + "1 - SzÃ¶veg fordÃ­tÃ¡sa binÃ¡ris kÃ³dra\n" + "2 - BinÃ¡ris kÃ³d fordÃ­tÃ¡sa szÃ¶vegre\n" + "3 - KilÃ©pÃ©s");
 	}
 
 	private static void textToBinary() {
-		System.out.println("Szöveg fordítása Bináris kódra");
-		System.out.print("Kérem írja ide a fordítandó szöveget: ");
-		String s = sc.next();
-		sc.nextLine();
+		System.out.println("SzÃ¶veg fordÃ­tÃ¡sa binÃ¡ris kÃ³dra.");
+		System.out.print("KÃ©rem Ã­rja ide a fordÃ­tandÃ³ szÃ¶veget: ");
+		String s = sc.nextLine();
 
 		byte[] bytes = s.getBytes();
 		StringBuilder binary = new StringBuilder();

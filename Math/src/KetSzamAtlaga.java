@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class KezSzamAtlaga {
+public class KetSzamAtlaga {
 
 	static Scanner sc;
 	static double number;
@@ -12,10 +12,10 @@ public class KezSzamAtlaga {
 
 		equationOfValues = new HashMap<Character, Double>();
 		int f = 1;
-		System.out.println("A mostani program kisz·molja, hogy az elsı sz·m oszthatÛ-e a m·sodik sz·mmal.\n");
+		System.out.println("A mostani program kisz√°molja, hogy az els≈ë sz√°m oszthat√≥-e a m√°sodik sz√°mmal.\n");
 
 		for (int i = 0; i < 2; i++) {
-			System.out.print("KÈrem adja meg a(z) " + f + " sz·mot: ");
+			System.out.print("K√©rem adja meg a(z) " + f + " sz√°mot: ");
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
 			sc.nextLine();
@@ -24,6 +24,6 @@ public class KezSzamAtlaga {
 			f++;
 		}
 		double atlag = (equationOfValues.get('a') + equationOfValues.get('b')) / 2;
-		System.out.println(equationOfValues.get('a') + " Ès " + equationOfValues.get('b') +" ·tlaga = " + atlag);
+		System.out.println(equationOfValues.get('a') + " √©s " + equationOfValues.get('b') +" √°tlaga = " + atlag);
 	}
 }

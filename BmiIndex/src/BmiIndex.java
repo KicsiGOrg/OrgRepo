@@ -11,16 +11,16 @@ public class BmiIndex {
 
 		int i = 0;
 		System.out.println(
-				"A beírt adatok alapján kiszámolom a testtömeg indexét.");
+				"A beÃ­rt adatok alapjÃ¡n kiszÃ¡molom a testtÃ¶meg indexÃ©t.");
 		do {
 			if(i == 0) {
-				System.out.print("\nKérem adja meg a magasságát: ");
+				System.out.print("\nKÃ©rem adja meg a magassÃ¡gÃ¡t: ");
 				sc = new Scanner(System.in);
 				height = sc.nextInt();
 				sc.nextLine();
 				height = height / 100;
 			}else if(i == 1) {
-				System.out.print("\nKérem adja meg a súlyát: ");
+				System.out.print("\nKÃ©rem adja meg a sÃºlyÃ¡t: ");
 				sc = new Scanner(System.in);
 				weight = sc.nextInt();
 				sc.nextLine();
@@ -31,15 +31,15 @@ public class BmiIndex {
 		bmiIndex = weight / Math.pow(height, 2);
 
 		if(bmiIndex < 20) {
-			System.out.println("\nA megadott értékek alapján, az Ön testtömeg indexe: Sovány.");
+			System.out.println("\nA megadott Ã©rtÃ©kek alapjÃ¡n, az Ã¶n testtÃ¶meg index besorolÃ¡sa: SovÃ¡ny.");
 		}else if(bmiIndex < 25 && bmiIndex > 20) {
-			System.out.println("\nA megadott értékek alapján, az Ön testtömeg indexe: Átlagos.");
+			System.out.println("\nA megadott Ã©rtÃ©kek alapjÃ¡n, az Ã¶n testtÃ¶meg index besorolÃ¡sa: Ãtlagos.");
 		}else if(bmiIndex < 30 && bmiIndex > 25) {
-			System.out.println("\nA megadott értékek alapján, az Ön testtömeg indexe: Túlsúlyos.");
+			System.out.println("\nA megadott Ã©rtÃ©kek alapjÃ¡n, az Ã¶n testtÃ¶meg index besorolÃ¡sa: TÃºlsÃºlyos.");
 		}else if(bmiIndex < 40 && bmiIndex > 30) {
-			System.out.println("\nA megadott értékek alapján, az Ön testtömeg indexe: Elhízott.");
+			System.out.println("\nA megadott Ã©rtÃ©kek alapjÃ¡n, az Ã¶n testtÃ¶meg index besorolÃ¡sa: ElhÃ­zott.");
 		}else if(bmiIndex > 40) {
-			System.out.println("\nA megadott értékek alapján, az Ön testtömeg indexe: Kórosan elhízott.");
+			System.out.println("\nA megadott Ã©rtÃ©kek alapjÃ¡n, az Ã¶n testtÃ¶meg index besorolÃ¡sa: KÃ³rosan elhÃ­zott.");
 		}
 		
 	}

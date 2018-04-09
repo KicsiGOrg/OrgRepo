@@ -5,30 +5,30 @@ import java.util.*;
 public class HappyBirthday {
 
 	public static void main(String[] args) {
-		// Ma dátum lekérdezése év paraméterre csökkente String formátumban
+		// Ma dÃ¡tum lekrdezÃ©se Ã©v paramÃ©terre csÃ¶kkente String formÃ¡tumban
 		DateFormat df = new SimpleDateFormat("yyyy");
 		Date today = Calendar.getInstance().getTime();
 		String currentYear = df.format(today);
 
-		// String formátumú év paraméter integerré konvertálása
+		// String formÃ¡tumÃº Ã©v paramÃ©ter integerrÃ© konvertÃ¡lÃ¡sa
 		int intCurrentYear = Integer.parseInt(currentYear);
 
-		// Integer formátumú évszámból kivonjuk a születési évet, hogy megtudjuk az
-		// aktuális évszámot
+		// Integer formÃ¡tumÃº Ã©vszÃ¡mbÃ³l kivonjuk a szÃ¼letÃ©si Ã©vet, hogy megtudjuk az
+		// aktuÃ¡lis Ã©vszÃ¡mot
 		int birthYear = intCurrentYear - 1955;
 
-		// String-gé visszaalakítva a dátum, hogy a tömbön belül tudjak rá hivatkozni
+		// String-gÃ© visszaalakÃ­tva a dÃ¡tum, hogy a tÃ¶mbÃ¶n belÃ¼l tudjak rÃ¡ hivatkozni
 		String stringBirthYear = String.valueOf(birthYear);
 
-		// Az aktuális évbõl kivonjuk a Ph.D megszerzésének az évét
+		// Az aktuÃ¡lis Ã©vbÅ‘l kivonjuk a Ph.D megszerzÃ©sÃ©nek az Ã©vÃ©t
 		int previousBirthYear = intCurrentYear - 1983;
 
 		String[] datas = { "James", "Gossling", stringBirthYear,
-				" születésnapod alkalmából kívánok nagyon Boldog születésnapot!",
-				" éves korodban szerezted a Ph.D-det a Carnegie Mellon University-n, amihez utólag is gratulálok!",
-				"Viszlát! Jövõre Veled ugyanitt" };
+				" szÃ¼letÃ©snapod alkalmÃ¡bÃ³l kÃ­vÃ¡nok nagyon boldog szÃ¼letÃ©snapot!",
+				" Ã©ves korodban szerezted a Ph.D-det a Carnegie Mellon University-n, amihez utÃ³lag is gratulÃ¡lok!",
+				"ViszlÃ¡t! JÃ¶vÅ‘re Veled ugyanitt" };
 
-		System.out.println("Isten éltessen " + datas[0] + "!");
+		System.out.println("Isten Ã©ltessen " + datas[0] + "!");
 		System.out.println(stringBirthYear + datas[3]);
 		System.out.println(previousBirthYear + datas[4]);
 		System.out.println(datas[datas.length - 1]);

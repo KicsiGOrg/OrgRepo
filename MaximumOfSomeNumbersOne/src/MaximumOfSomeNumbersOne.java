@@ -9,9 +9,9 @@ public class MaximumOfSomeNumbersOne {
 
 		double maxNumber = Integer.MIN_VALUE;
 		System.out.println(
-				"BeÌrt sz·mok maximum·nak kikeresÈse.\nA sz·mok bevitele addig tart, amÌg a felhaszn·lÛ nem ad meg a konzolon 0-t.");
+				"Be√≠rt sz√°mok maximum√°nak kikeres√©se.\nA sz√°mok bevitele addig tart, am√≠g a felhaszn√°l√≥ nem ad meg a konzolon 0-t.");
 		do {
-			System.out.print("\nKÈrem adjon meg egy sz·mot: ");
+			System.out.print("\nK√©rem adjon meg egy sz√°mot: ");
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
 			sc.nextLine();

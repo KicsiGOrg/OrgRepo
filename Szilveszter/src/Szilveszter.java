@@ -16,12 +16,11 @@ public class Szilveszter {
 			try {
 				TimeUnit.SECONDS.sleep(1);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 		}
-		System.out.println("Boldog új évet " + args[0] + "!");
+		System.out.println("Boldog Ãºj Ã©vet " + args[0] + "!");
 
 	}
 }

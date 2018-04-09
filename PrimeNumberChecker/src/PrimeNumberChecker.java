@@ -4,14 +4,14 @@ public class PrimeNumberChecker {
  
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Kérem, adjon meg egy számot: ");
+        System.out.print("KÃ©rem adjon meg egy szÃ¡mot: ");
         int number = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("A megadott szám: " + number);
+        System.out.println("A megadott szÃ¡m: " + number);
         if (isPrime(number)) {
-            System.out.println("Ez egy prímszám.");
+            System.out.println("Ez egy prÃ­mszÃ¡m.");
         } else {
-            System.out.println("Ez egy összetett szám.");
+            System.out.println("Ez egy Ã¶sszetett szÃ¡m.");
         }
         scanner.close();
     }

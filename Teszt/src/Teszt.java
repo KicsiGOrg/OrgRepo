@@ -6,10 +6,10 @@ public class Teszt {
 	
 		int number = 123456;
 		String strNumber = String.valueOf(number);
-		int width = 12; 	// 12 char hosszúságban határozom meg a számot
-		char fill = '0'; 	// 0-val fogom kiegsézíteni, ha a szöveg hossza nem éri el a width-ben megadott értéket  
+		int width = 12; 	// 12 char hosszÃºsÃ¡gban hatÃ¡rozom meg a szÃ¡mot
+		char fill = '0'; 	// 0-val fogom kiegÃ©szÃ­teni, ha a szÃ¶veg hossza nem Ã©ri el a width-ben megadott Ã©rtÃ©ket  
 
-		strNumber = new String(new char[width - strNumber.length()]).replace('\0', fill) + strNumber; // a fill-ben megadott char-al fogom kiegészíteni a szöveg elejét!
+		strNumber = new String(new char[width - strNumber.length()]).replace('\0', fill) + strNumber; // a fill-ben megadott char-al fogom kiegÃ©szÃ­teni a szÃ¶veg elejÃ©t!
 		
 		int xyz;
 		int[] sevenArray = new int[4];
@@ -33,23 +33,6 @@ public class Teszt {
 		for(int i = 0; i < 4; i++) {
 			System.out.println(sevenArray[i]);
 		}
-		/*
-		String strFourthThreeDigits = strNumber.substring(strNumber.length() - 3, strNumber.length());
-		int intFourthThreeDigits = Integer.parseInt(strFourthThreeDigits);
-		sevenArray[0] = intFourthThreeDigits;
-
-		String strThirdThreeDigits = strNumber.substring(strNumber.length() - 6, strNumber.length() - 3);
-		int intThirdThreeDigits = Integer.parseInt(strThirdThreeDigits);
-		sevenArray[1] = intThirdThreeDigits * -1;
-
-		String strSecondThreeDigits = strNumber.substring(strNumber.length() - 9, strNumber.length() - 6);
-		int intSecondTreeDigits = Integer.parseInt(strSecondThreeDigits);
-		sevenArray[2] = intSecondTreeDigits;
-
-		String strFirstThreeDigits = strNumber.substring(strNumber.length() - 12, strNumber.length() - 9);
-		int intFirstThreeDigits = Integer.parseInt(strFirstThreeDigits);
-		sevenArray[3] = intFirstThreeDigits * -1;
-		*/
 		
 		int sumNumber = IntStream.of(sevenArray).sum();
 		if(sumNumber < 0) {

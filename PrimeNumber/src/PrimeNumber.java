@@ -5,13 +5,13 @@ public class PrimeNumber {
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("KÈrem adjon meg egy sz·mot: ");
+		System.out.print("K√©rem adjon meg egy sz√°mot: ");
 		int number = scanner.nextInt();
 		scanner.nextLine();
 		if (isPrime(number) == true) {
-			System.out.println("A " + number + " PrÌm sz·m");
+			System.out.println("A " + number + " Pr√≠m sz√°m");
 		} else {
-			System.out.println("A " + number + " nem prÌm sz·m");
+			System.out.println("A " + number + " nem pr√≠m sz√°m");
 		}
 		scanner.close();
 	}

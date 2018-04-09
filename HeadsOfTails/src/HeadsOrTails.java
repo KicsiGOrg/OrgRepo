@@ -13,6 +13,6 @@ public class HeadsOrTails {
 				tail++;
 			}
 		}
-		System.out.println("1000 feldobás eredménye:\nFej: "+ head+ "\nÍrás: "+ tail);
+		System.out.println("1000 feldobÃ¡s eredmÃ©nye:\nFej: "+ head+ "\nÃrÃ¡s: "+ tail);
 	}
 }

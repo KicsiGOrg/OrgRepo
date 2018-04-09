@@ -10,9 +10,9 @@ public class AverageOfSomeNumbersOne {
 		int i = 1;
 		int sumNumber = 0;
 		System.out.println(
-				"BeÌrt sz·mok ·tlag kisz·mÌt·sa.\nA sz·mok bevitele addig tart, amÌg a felhaszn·lÛ nem ad meg a konzolon 0-t.");
+				"Be√≠rt sz√°mok √°tlag√°nak kisz√°mt√°sa.\nA sz√°mok bevitele addig tart, am√≠g a felhaszn√°l√≥ nem ad meg a konzolon 0-t.");
 		do {
-			System.out.print("\nKÈrem adja meg a sz·mot: ");
+			System.out.print("\nK√©rem adja meg a sz√°mot: ");
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
 			sc.nextLine();

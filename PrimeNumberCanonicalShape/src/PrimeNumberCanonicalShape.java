@@ -4,7 +4,7 @@ public class PrimeNumberCanonicalShape {
 
 	public static void main(String[] args) {
 
-		System.out.print("KÈrem adjon be egy sz·mot: ");
+		System.out.print("K√©rem adjon be egy sz√°mot: ");
 		Scanner sc = new Scanner(System.in);
 		int number = sc.nextInt();
 		sc.nextLine();

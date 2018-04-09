@@ -12,10 +12,10 @@ public class ElsoFokuEgyenlet {
 
 		equationOfValues = new HashMap<Character, Integer>();
 		int f = 1;
-		System.out.println("A mostani program kiszámolja az Elsõ fokú egyenlet eredményét.\n");
+		System.out.println("A mostani program kiszÃ¡molja az ElsÅ‘ fokÃº egyenlet eredmÃ©nyÃ©t.\n");
 		
 		for(int i = 0; i < 2; i++) {
-			System.out.print("Kérem adja meg az " + f + " számot: ");
+			System.out.print("KÃ©rem adja meg az " + f + " szÃ¡mot: ");
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
 			sc.nextLine();

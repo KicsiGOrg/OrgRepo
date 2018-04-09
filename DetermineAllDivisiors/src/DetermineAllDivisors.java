@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class DetermineAllDivisors {
 
 	public static void main(String[] args) {
-		System.out.println("Õrjon be egy sz·mot, aminek az osztÛit megkereshetem: ");
+		System.out.println("√çrjon be egy sz√°mot, aminek az oszt√≥it megkereshetem: ");
 		Scanner scanner = new Scanner(System.in);
 		int number = scanner.nextInt();
 		scanner.nextLine();
 		int[] divisors = determineDivisors(number);
 		for (int divisor : divisors) {
-			if (divisor == 0) {				//Amint az osztÛ elÈri a 0-·t le·llÌtja a programot.
+			if (divisor == 0) {				//Amint az oszt√≥ el√©ri a 0-√°t le√°ll√≠tja a programot.
 				break;
 			}
 			System.out.println(divisor);
@@ -22,7 +22,7 @@ public class DetermineAllDivisors {
 		int counter = 0;
 		for (int possibleDivisor = 2; possibleDivisor <= number / 2; possibleDivisor++) {
 			if (number % possibleDivisor == 0) {
-				divisors[counter++] = possibleDivisor; // a counter ÈrtÈke lesz a tˆmb indexe, amit minden lefut·sn·l nˆvelem!
+				divisors[counter++] = possibleDivisor; // a counter √©rt√©ke lesz a t√∂mb indexe, amit minden lefut√°sn√°l n√∂velem!
 			}
 		}
 		return divisors;

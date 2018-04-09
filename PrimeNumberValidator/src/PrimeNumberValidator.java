@@ -2,9 +2,12 @@ public class PrimeNumberValidator {
 
 	public static void main(String[] args) {
 
+		int db = 0;
+		
 		for (int i = 1; i <= 50; i++) {
 			if (isPrime(i) == true) {
-				System.out.println(i);
+				System.out.println(db + " - " + i);
+				db++;
 			}
 		}
 

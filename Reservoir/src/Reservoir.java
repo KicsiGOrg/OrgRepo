@@ -12,13 +12,15 @@ public class Reservoir {
 		char[][] reservoirArray = new char[10][10];
 		int[] reservoirInt = new int[10];
 
-		System.out.println("Üdvözlöm én a számítógép vagyok. \nA mostani programmal kiszámoljuk egy víztároló kapacitását.\n ");
-		System.out.println("               MENÜSOR\n***********************************\n1 - Ha Ön szeretne adatokat megadni\n2 - Véletlen szám generálás ");
+		System.out.println(
+				"ÃœdvÃ¶zlÃ¶m Ã©n a szÃ¡mÃ­tÃ³gÃ©p vagyok. \nA mostani programmal kiszÃ¡moljuk egy vÃ­ztÃ¡rolÃ³ kapacitÃ¡sÃ¡t.\n ");
+		System.out.println(
+				"               MENÃœSOR\n***********************************\n1 - Ha Ã–n szeretne adatokat megadni\n2 - VÃ©letlen szÃ¡m generÃ¡lÃ¡s ");
 		Scanner sc;
 		int userResponse;
 
 		do {
-			System.out.print("\nKérem válasszon a menübõl: ");
+			System.out.print("\nKÃ©rem vÃ¡lasszon a menÃ¼bÅ‘l: ");
 			sc = new Scanner(System.in);
 			userResponse = sc.nextInt();
 			sc.nextLine();
@@ -31,14 +33,17 @@ public class Reservoir {
 				randomFiller(reservoirInt, zero, ten);
 				break;
 			default:
-				System.out.println("Téves menüpont!");
+				System.out.println("TÃ©ves menÃ¼pont!");
 				break;
 			}
-			fieldCreator(reservoirArray, reservoirInt); // A terep felöltése a megadott számok alapján
-			fieldPlotter(reservoirArray); 				// A terep kirajzolása
-
+			
+			if (userResponse == 1 || userResponse == 2) {
+				fieldCreator(reservoirArray, reservoirInt); // A terep felÃ¶ltÃ©se a megadott szÃ¡mok alapjÃ¡n
+				fieldPlotter(reservoirArray); // A terep kirajzolÃ¡sa
+			}
+			
 		} while (userResponse != 1 && userResponse != 2);
-		System.out.println("\nKöszönöm, hogy igénybe vette a szolgáltatásaimat.\nViszont látásra.");
+		System.out.println("\nKÃ¶szÃ¶nÃ¶m, hogy igÃ©nybe vette a szolgÃ¡ltatÃ¡saimat.\nViszont lÃ¡tÃ¡sra.");
 		sc.close();
 	}
 
@@ -57,7 +62,7 @@ public class Reservoir {
 	}
 
 	private static void randomFiller(int[] reservoirInt, int zero, int ten) {
-		System.out.println("\nVéletlen számokkal töltöm fel a víztározót!\n");
+		System.out.println("\nVÃ©letlen szÃ¡mokkal tÃ¶ltÃ¶m fel a vÃ­ztÃ¡rozÃ³t!\n");
 		for (int i = 0; i < reservoirInt.length; i++) {
 			number = (int) (Math.random() * (ten - zero + 1)) + zero;
 			reservoirInt[i] = number;
@@ -65,7 +70,8 @@ public class Reservoir {
 	}
 
 	private static void userFiller(int[] reservoirInt, Scanner sc) {
-		System.out.println("\nÖn tölti fel a víztározó tömböt adatokkal!\nKérem adjon meg 0 - 10 közötti számokat a talaj mintázatához.\n");
+		System.out.println(
+				"\nÃ–n tÃ¶lti fel a vÃ­ztÃ¡rozÃ³ tÃ¶mbÃ¶t adatokkal!\nKÃ©rem adjon meg 0 - 10 kÃ¶zÃ¶tti szÃ¡mokat a talaj mintÃ¡zatÃ¡hoz.\n");
 		for (int i = 0; i < reservoirInt.length; i++) {
 			int f = i + 1;
 			System.out.print(f + ": ");

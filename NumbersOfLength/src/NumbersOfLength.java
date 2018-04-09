@@ -4,7 +4,7 @@ public class NumbersOfLength {
 
 	public static void main(String[] args) {
 
-		System.out.print("Õrj be egy sz·mot: ");
+		System.out.print("√çrj be egy sz√°mot: ");
 		Scanner scanner = new Scanner(System.in);
 		long number = Math.abs(scanner.nextLong());
 		scanner.nextLine();
@@ -12,7 +12,7 @@ public class NumbersOfLength {
 		for (numberOfDigits = 0; 0 < number; number /= 10, numberOfDigits++) {
 
 		}
-		System.out.println("A megadott sz·m " + numberOfDigits + " sz·mjegy˚!");
+		System.out.println("A megadott sz√°m " + numberOfDigits + " sz√°mjegy≈±!");
 		scanner.close();
 
 	}

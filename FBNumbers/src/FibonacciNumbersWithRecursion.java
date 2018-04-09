@@ -1,8 +1,8 @@
 public class FibonacciNumbersWithRecursion {
 
 	public static void main(String[] args) {
-		for (int i = 0; i < 20; i++) {
-			System.out.println(i + ". Fibonacci szám: " + calculateFibonacciNumber(i));
+		for (int i = 0; i <= 20; i++) {
+			System.out.println(i + ". Fibonacci szÃ¡m: " + calculateFibonacciNumber(i));
 		}
 	}
 	private static int calculateFibonacciNumber(int n) {

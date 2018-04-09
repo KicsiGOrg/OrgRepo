@@ -3,40 +3,39 @@ public class Alap {
 
 	/*
 	 * 
-	 * változók
+	 * VÃ¡ltozÃ³k
 	 * 
 	 */
 
-	int a; // példány változó
-	static int b; // Osztály változó
-
+	int a; // pÃ©ldÃ¡ny vÃ¡lozÃ³
+	static int b; // OsztÃ¡ly vÃ¡ltozÃ³
 	/*
-	 * Az osztály szinten megadott változók kapnak default értéket, míg a mainben található c vagy args változó nem!
-	 * Ha érték nélkül akarom használni, akkor fordítási hibát kapok.
+	 * Az osztÃ¡ly szinten megadott vÃ¡ltozÃ³k default Ã©rtÃ©ket kapnak, mÃ­g a mainben talÃ¡lhatÃ³ c vagy args vÃ¡ltozÃ³ nem!
+	 * Ha Ã©rtÃ©k nÃ©lkÃ¼l akarom hasznÃ¡lni, akkor fordÃ­tÃ¡si hibÃ¡t kapok.
 	 */
 	
-	public static void main(String[] args) { // args paraméter változó
+	public static void main(String[] args) { // args paramÃ©ter vÃ¡ltozÃ³
 
-		int c; // helyi változó
+		int c; // helyi vÃ¡ltozÃ³
 
 		
 		/*
-		 * Elnevezési konvenciól
-		 * Az osztály nagy betûvel kezdõdik CamelCase
-		 * metódus camelCase (kisbetûvel kezdõdik)
-		 * Változó camelCase (kisbetûvel kezdõdik)
+		 * ElnevezÃ©si konvenciÃ³k
+		 * Az osztÃ¡ly nagy betÅ±vel kezdÅ‘dik CamelCase
+		 * metÃ³dus camelCase (kisbetÅ±vel kezdÅ‘dik)
+		 * vÃ¡ltozÃ³ camelCase (kisbetÅ±vel kezdÅ‘dik)
 		 * 
-		 * Fordítás idejû konstans UPPERCASE
+		 * FordÃ­tÃ¡s idejÅ± konstans UPPERCASE
 		 */
 		
-		int d = 2; // int literál
+		int d = 2; // int literÃ¡l
 		
 		/*
-		 * ha if-ben | (pipe) van, akkor mind a két állítást vizsgálja
-		 * ha if-ben || (dupla pipe) van, akkor balról jobbra halad és a jobb oldalit csak akkor vizsgálja meg, ha az elsõ feltétel nem valós
+		 * ha if-ben | (pipe) van, akkor mind a kÃ©t Ã¡llÃ­tÃ¡st vizsgÃ¡lja
+		 * ha if-ben || (dupla pipe) van, akkor balrÃ³l jobbra halad Ã©s a jobb oldalit csak akkor vizsgÃ¡lja meg, ha az elsÅ‘ feltÃ©tel nem valÃ³s
 		 * 
 		 * {
-		 * kapcsos zárjel elhagyható (de kerülendõ), ha csak 1 parancs van benne (pl. sout)
+		 * kapcsos zÃ¡rjel elhagyhatÃ³ (de kerÃ¼lendÅ‘), ha csak 1 parancs van benne (pl. sout)
 		 * }
 		 */
 		

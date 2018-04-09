@@ -12,10 +12,10 @@ public class Oszthatosag {
 
 		equationOfValues = new HashMap<Character, Integer>();
 		int f = 1;
-		System.out.println("A mostani program kisz·molja, hogy az elsı sz·m oszthatÛ-e a m·sodik sz·mmal.\n");
+		System.out.println("A mostani program kisz√°molja, hogy az els≈ë sz√°m oszthat√≥-e a m√°sodik sz√°mmal.\n");
 
 		for (int i = 0; i < 2; i++) {
-			System.out.print("KÈrem adja meg az " + f + " sz·mot: ");
+			System.out.print("K√©rem adja meg az " + f + " sz√°mot: ");
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
 			sc.nextLine();
@@ -35,13 +35,13 @@ public class Oszthatosag {
 		if (equationOfValues.get('a') % equationOfValues.get('b') == 0) {
 			c = equationOfValues.get('a') / equationOfValues.get('b');
 			System.out.println(equationOfValues.get('a') + " / " + equationOfValues.get('b') + " = " + c);
-			System.out.println("Nincs maradÈk");
+			System.out.println("Nincs marad√©k");
 		} else {
 			c = equationOfValues.get('a') / equationOfValues.get('b');
 			int d = equationOfValues.get('a') % equationOfValues.get('b');
 			System.out.println(equationOfValues.get('a') + " / " + equationOfValues.get('b') + " = " + c);
 			if (equationOfValues.get('a') > equationOfValues.get('b')) {
-				System.out.println(d + " a maradÈk");
+				System.out.println(d + " a marad√©k");
 			}
 		}
 		sc.close();

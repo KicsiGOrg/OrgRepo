@@ -11,7 +11,7 @@ public class MaxMinSumAvg {
 		int max = numberArray[0];
 		
 		for (int i = 0; i < numberArray.length; i++) {
-			System.out.print("Kérem adja meg a(z) " + numberIndex + " vizsgálandó számot: ");
+			System.out.print("KÃ©rem adja meg a(z) " + numberIndex + " vizsgÃ¡landÃ³ szÃ¡mot: ");
 			int inputNumber = sc.nextInt();
 			sc.nextLine();
 			numberIndex++;
@@ -34,10 +34,10 @@ public class MaxMinSumAvg {
 			}
 		}
 
-		System.out.println("A tömb minimuma: " + min);
-		System.out.println("A tömb maximuma: " + max);
-		System.out.println("A tömb összege: " + sumNumber);
-		System.out.println("A tömb átlaga: " + Math.round(sumNumber / numberArray.length));
+		System.out.println("A tÃ¶mb minimuma: " + min);
+		System.out.println("A tÃ¶mb maximuma: " + max);
+		System.out.println("A tÃ¶mb Ã¶sszege: " + sumNumber);
+		System.out.println("A tÃ¶mb Ã¡tlaga: " + Math.round(sumNumber / numberArray.length));
 
 		sc.close();
 

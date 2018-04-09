@@ -2,19 +2,19 @@ import java.util.Scanner;
 
 public class SearchDivide {
 
+	static Scanner sc;
+	static int number;
+	
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Tudjuk meg egy sz醡 legkisebb 閟 legnagyobb oszt骿醫!");
-		System.out.print("K閞em 韗jon be egy sz醡ot: ");
-		int number = scanner.nextInt();
-		scanner.nextLine();
+		getNumber();
+		
 		if (isPrime(number)) {
-			System.out.println("A(z) " + number + " Pr韒 sz醡, a legkisebb oszt骿a 1 a legnagyobb " + number);
+			System.out.println("A(z) " + number + " Pr铆m sz谩m, a legkisebb oszt贸ja 1 a legnagyobb " + number);
 		} else {
 			for (int i = 2; i < number; i++) {
 				if (number % i == 0) {
-						System.out.println("A(z) " + number + " legkisebb oszt骿a: " + i);
+						System.out.println("A(z) " + number + " legkisebb oszt贸ja: " + i);
 						break;
 				}
 			}
@@ -22,35 +22,43 @@ public class SearchDivide {
 				int negativeNumber = number * (-1);
 				for (int i = negativeNumber - 1; i < negativeNumber; i--) {
 					if (negativeNumber == 1) {
-						System.out.println("Az -" + negativeNumber + " legkisebb 閟 legnagyobb oszt骿a 鰊maga.");
+						System.out.println("Az -" + negativeNumber + " legkisebb 茅s legnagyobb oszt贸ja 枚nmaga.");
 						break;
 					} else if (negativeNumber % i == 0) {
-						System.out.println("A(z) -" + negativeNumber + " legnagyobb oszt骿a: -" + i);
+						System.out.println("A(z) -" + negativeNumber + " legnagyobb oszt贸ja: -" + i);
 						break;
 					}
 				}
 				for (int i = 2; i < negativeNumber; i++) {
 					if (negativeNumber % i == 0) {
-						System.out.println("A(z) -" + negativeNumber + " legkisebb oszt骿a: -" + i);
+						System.out.println("A(z) -" + negativeNumber + " legkisebb oszt贸ja: -" + i);
 						break;
 					}
 				}
 			}
 			for (int i = number - 1; i < number; i--) {
 				if (number == 1) {
-					System.out.println("Az " + number + " legkisebb 閟 legnagyobb oszt骿a 鰊maga.");
+					System.out.println("Az " + number + " legkisebb 茅s legnagyobb oszt贸ja 枚nmaga.");
 					break;
 				} else if (number == 0) {
-					System.out.println("A megadott sz醡 a 0.");
+					System.out.println("A megadott sz谩m a 0.");
 					break;
 
 				} else if (number % i == 0) {
-					System.out.println("A(z) " + number + " legnagyobb oszt骿a: " + i);
+					System.out.println("A(z) " + number + " legnagyobb oszt贸ja: " + i);
 					break;
 				}
 			}
 		}
-		scanner.close();
+		sc.close();
+	}
+
+	private static void getNumber() {
+		sc = new Scanner(System.in);
+		System.out.println("Tudjuk meg egy sz谩m legkisebb 茅s legnagyobb oszt贸j谩t!");
+		System.out.print("K茅rem 铆rjon be egy sz谩mot: ");
+		number = sc.nextInt();
+		sc.nextLine();
 	}
 
 	static boolean isPrime(int number) {

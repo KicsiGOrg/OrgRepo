@@ -5,7 +5,7 @@ public class BB {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Sz·m: ");
+        System.out.print("Sz√°m: ");
         int originalNumber = scanner.nextInt();
         scanner.nextLine();
         sumOfDigitsProcess(originalNumber,digitNumber(originalNumber));
@@ -34,10 +34,10 @@ public class BB {
             sumOfDigitsProcess(sumOfDigits, digitNumber(sumOfDigits));
         } else {
             if (sumOfDigits == 3 || sumOfDigits == 6 || sumOfDigits == 9) {
-                System.out.println("OszthatÛ 3-mal");
+                System.out.println("Oszthat√≥ 3-mal");
             }
             else {
-                System.out.println("Nem oszthatÛ 3-mal");
+                System.out.println("Nem oszthat√≥ 3-mal");
             }
         }
     }

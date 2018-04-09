@@ -18,7 +18,7 @@ public class Morse {
 	}
 
 	private static void getInput() {
-		System.out.print("Kérem adja meg a fordítandó szöveget: ");
+		System.out.print("KÃ©rem adja meg a fordÃ­tandÃ³ szÃ¶veget: ");
 		sc = new Scanner(System.in);
 		input = sc.nextLine();
 	}
@@ -42,34 +42,34 @@ public class Morse {
 		setOfValues = new HashMap<String, String>();
 		
 		setOfValues.put("A",".-   ");
-		setOfValues.put("Á",".--.-   ");
+		setOfValues.put("ï¿½",".--.-   ");
 		setOfValues.put("B","-...   ");
 		setOfValues.put("C","-.-.   ");
 		setOfValues.put("D","-..   ");
 		setOfValues.put("E",".   ");
-		setOfValues.put("É","..-..   ");
+		setOfValues.put("ï¿½","..-..   ");
 		setOfValues.put("F","..-.   ");
 		setOfValues.put("G","--.   ");
 		setOfValues.put("H","....   ");
 		setOfValues.put("I","..   ");
-		setOfValues.put("Í","..   ");
+		setOfValues.put("ï¿½","..   ");
 		setOfValues.put("J",".---   ");
 		setOfValues.put("K","-.-   ");
 		setOfValues.put("L","--..   ");
 		setOfValues.put("M","--   ");
 		setOfValues.put("N","-.   ");
 		setOfValues.put("O","---   ");
-		setOfValues.put("Ö","---.   ");
-		setOfValues.put("Õ","---.   ");
+		setOfValues.put("ï¿½","---.   ");
+		setOfValues.put("ï¿½","---.   ");
 		setOfValues.put("P",".--.   ");
 		setOfValues.put("Q","--.-   ");
 		setOfValues.put("R",".-.   ");
 		setOfValues.put("S","...   ");
 		setOfValues.put("T","-   ");
 		setOfValues.put("U","..-   ");
-		setOfValues.put("Ú","..-   ");
-		setOfValues.put("Ü","..--   ");
-		setOfValues.put("Û","..--   ");
+		setOfValues.put("ï¿½","..-   ");
+		setOfValues.put("ï¿½","..--   ");
+		setOfValues.put("ï¿½","..--   ");
 		setOfValues.put("V","...-   ");
 		setOfValues.put("W",".--   ");
 		setOfValues.put("X","-..-   ");

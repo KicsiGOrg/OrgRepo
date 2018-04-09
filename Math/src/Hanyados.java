@@ -12,13 +12,13 @@ public class Hanyados {
 	
 		equationOfValues = new HashMap<Character, Integer>();
 		int f = 1;
-		System.out.println("A mostani program kisz·molja, hogy az elsı sz·m oszthatÛ-e a m·sodik sz·mmal.\n");
+		System.out.println("A mostani program kisz√°molja, hogy az els≈ë sz√°m oszthat√≥-e a m√°sodik sz√°mmal.\n");
 
 		for (int i = 0; i < 2; i++) {
 			if(f == 1) {
-				System.out.print("KÈrem adja meg a sz·mot: ");
+				System.out.print("K√©rem adja meg a sz√°mot: ");
 			}else {
-				System.out.print("KÈrem adja meg a h·nyadost: ");
+				System.out.print("K√©rem adja meg a h√°nyadost: ");
 			}
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
@@ -30,7 +30,7 @@ public class Hanyados {
 		
 		for (int b = 0; b <= equationOfValues.get('b'); b++) {
 			long c = (int) Math.pow(equationOfValues.get('a'), b);
-			System.out.println(equationOfValues.get('a') + " - " + b + " hatv·nya: " + c);
+			System.out.println(equationOfValues.get('a') + " - " + b + " hatv√°nya: " + c);
 		}
 		sc.close();
 	}

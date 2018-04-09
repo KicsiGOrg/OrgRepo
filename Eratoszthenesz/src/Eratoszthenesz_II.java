@@ -2,7 +2,7 @@ public class Eratoszthenesz_II {
 
 	public static void main(String[] args) {
 
-		// tomb[i] false -> PrÌm
+		// tomb[i] false -> Pr√≠m
 		boolean[] tomb = new boolean[1000];
 
 		int p;

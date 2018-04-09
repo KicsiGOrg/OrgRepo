@@ -15,7 +15,7 @@ public class SecondDegreeEquation {
 		System.out.println("ax2 + bx + c=0\n");
 		
 		for (int i = 0; i < 3; i++) {
-			System.out.print("Kérem adja meg a képlet \"" + character + "\" értékét: ");
+			System.out.print("KÃ©rem adja meg a kÃ©plet \"" + character + "\" Ã©rtÃ©kÃ©t: ");
 			sc = new Scanner(System.in);
 			int number = sc.nextInt();
 			sc.nextLine();
@@ -28,12 +28,12 @@ public class SecondDegreeEquation {
 		if(discriminant > 0) {
 			xOne = (((-equationOfValues.get('b'))+discriminant))/(2*equationOfValues.get('a'));
 			xTwo = (((-equationOfValues.get('b'))-discriminant))/(2*equationOfValues.get('a'));
-			System.out.println("Az egyenlet gyökei: " + xOne + " és " + xTwo);
+			System.out.println("Az egyenlet gyÃ¶kei: " + xOne + " ï¿½s " + xTwo);
 		}else if(discriminant == 0) {
 			xOne= -equationOfValues.get('b')/(2*equationOfValues.get('a'));
-			System.out.println("Az egyenlet gyöke: " + xOne);		
+			System.out.println("Az egyenlet gyÃ¶ke: " + xOne);		
 		}else {
-			System.out.println("Az egyenletnek nincs valós gyöke.");
+			System.out.println("Az egyenletnek nincs valÃ³s gyÃ¶ke.");
 		}
 		
 		sc.close();

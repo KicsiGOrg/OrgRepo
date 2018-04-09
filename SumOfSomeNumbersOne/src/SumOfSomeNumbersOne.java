@@ -9,9 +9,9 @@ public class SumOfSomeNumbersOne {
 
 		double sumNumber = 0;
 		System.out.println(
-				"Beírt számok összegének kiszámítása.\nA számok bevitele addig tart, amíg a felhasználó nem ad meg a konzolon 0-t.");
+				"BeÃ­rt szÃ¡mok Ã¶sszegÃ©nek kiszÃ¡mÃ­tÃ¡sa.\nA szÃ¡mok bevitele addig tart, amÃ­g a felhasznÃ¡lÃ³ nem ad meg a konzolon 0-t.");
 		do {
-			System.out.print("\nKérem adja meg a számot: ");
+			System.out.print("\nKÃ©rem adja meg a szÃ¡mot: ");
 			sc = new Scanner(System.in);
 			number = sc.nextInt();
 			sc.nextLine();

@@ -58,7 +58,7 @@ public class TicTacToe {
 		int i = 0;
 		
 		for (char[][] iTomb : tomb) {
-			System.out.print("\n" + i + ". lépés!" + "\n");
+			System.out.print("\n" + i + ". lÃ©pÃ©s!" + "\n");
 			for (char[] aTomb : iTomb) {
 				for (char anTomb : aTomb) {
 					System.out.print(anTomb);
