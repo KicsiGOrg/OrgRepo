@@ -18,7 +18,11 @@ public class BmiIndex {
 				sc = new Scanner(System.in);
 				height = sc.nextInt();
 				sc.nextLine();
-				height = height / 100;
+				if(height < 100 || height > 200) {
+					i--;
+				}else {
+					height = height / 100;
+				}
 			}else if(i == 1) {
 				System.out.print("\nKérem adja meg a súlyát: ");
 				sc = new Scanner(System.in);
