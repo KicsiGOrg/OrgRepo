@@ -25,9 +25,8 @@ public class ArmstrongNumber {
 				length = (int) (Math.log10(j) + 1);
 				for (i = 0; i < length; i++) {
 					long nLastDigit = (long) nDigits % 10;
-					double nPowDigit = Math.pow(nLastDigit, length);
 					nDigits = nDigits / 10;
-					nSum = nSum + nPowDigit;
+					nSum = nSum + (double) Math.pow(nLastDigit, length);
 				}
 				if (nSum == j) {
 					System.out.println(piece + " - Armstong szám: " + (long)nSum);
