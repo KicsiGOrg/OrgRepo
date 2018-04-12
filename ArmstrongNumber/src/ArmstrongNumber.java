@@ -6,33 +6,37 @@ public class ArmstrongNumber {
 	static int n;
 	static int length;
 	static int piece = 1;
-	static long nSum = 0;
+	static double nSum = 0;
 	static int nOriginal;
-	static int i;
-	
+	static long i;
+	static long nDigits;
+
 	public static void main(String[] args) {
 
 		getN();
-		int nDigits = n;
-		for(int j = 0; j < n; j++) {
-//			length = (int) (Math.log10(n) + 1);
-			length = (int) (Math.log10(j) + 1);
-			for (i = 0; i < length; i++) {
-				int nLastDigit = nDigits % 10;
-				int nPowDigit = (int) Math.pow(nLastDigit, length);
-				nDigits = j / 10;
-				nSum = nSum + nPowDigit;
-			}
-			if (nSum == i) {
-				System.out.println(piece + " - Armstong szám: " + nSum);
+		nOriginal = n;
+		long j = 0;
+		do {
+			nDigits = j;
+			if (j == 0) {
+				System.out.println(piece + " - Armstong szám: " + (long)nSum);
 				piece++;
-				if(n == 0) {
-					n++;
-				}else {
-					n++;
+			} else {
+				length = (int) (Math.log10(j) + 1);
+				for (i = 0; i < length; i++) {
+					long nLastDigit = (long) nDigits % 10;
+					double nPowDigit = Math.pow(nLastDigit, length);
+					nDigits = nDigits / 10;
+					nSum = nSum + nPowDigit;
 				}
+				if (nSum == j) {
+					System.out.println(piece + " - Armstong szám: " + (long)nSum);
+					piece++;
+				}
+				nSum = 0;
 			}
-		} 
+			j++;
+		} while (piece <= nOriginal);
 	}
 
 	private static int getN() {
