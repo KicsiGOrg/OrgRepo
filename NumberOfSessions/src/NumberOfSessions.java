@@ -28,29 +28,19 @@ public class NumberOfSessions {
 		printToConsole();
 	}
 
-//		Ha a 0-át egyszer ki kell írni
-
 	private static void printToConsole() {
 		for (int i = 0; i < numbers.length; i++) {
 			if (numbers[i] == 0) {
 				System.out.print("0");
 			}
-			for (int j = 0; j < numbers[i]; j++) {
-				System.out.print(numbers[i]);
+			for (int j = 0; j <= numbers[i]; j++) {
+				if(numbers[i] != 0) {
+					System.out.print(numbers[i]);
+				}
 			}
 			System.out.println();
 		}
 	}
-
-// 		Ha a 0-át egyszer sem kell kiírni
-//	 private static void printToConsole() {
-//	 	for (int i = 0; i < numbers.length; i++) {
-//	 		for (int j = 0; j < numbers[i]; j++) {
-//	 			System.out.print(numbers[i]);
-//	 		}
-//	 		System.out.println();
-//	 	}
-//	 }
 
 	private static void getNumber() {
 
@@ -73,7 +63,7 @@ public class NumberOfSessions {
 			n = sc.nextInt();
 			sc.nextLine();
 			if (n < 0) {
-				System.out.println("A megadot szám kisebb, mint 0.\nKérem adjon meg egy másik számot.");
+				System.out.println("A megadot szám kisebb, mint 0.\nKérem adjon meg egy nullánál nagyobb számot.");
 			}
 		} while (n < 0);
 	}
