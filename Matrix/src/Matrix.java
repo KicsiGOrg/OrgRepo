@@ -10,7 +10,6 @@ public class Matrix {
 		for (int i = 0; i < aMatrix.length; i++) {
 			for (int j = 0; j < bMatrix.length; j++) {
 				int d = aMatrix[i][j] + bMatrix[i][j];
-				
 				System.out.println("Mátrixok összege: " + d);
 			}
 		}
@@ -18,7 +17,6 @@ public class Matrix {
 		for (int i = 0; i < aMatrix.length; i++) {
 			for (int j = 0; j < bMatrix.length; j++) {
 				int d = aMatrix[i][j] - bMatrix[i][j];
-				
 				System.out.println("Mátrixok különbsége: " + d);
 			}
 		}

@@ -12,11 +12,15 @@ public class NumberOfSessions {
 	public static void main(String[] args) {
 
 		getN();
-		numbers = new int[n];
-
+			numbers = new int[n];
 		do {
-			getNumber();
-			nS++;
+			if(n != 0) {
+				getNumber();
+				nS++;
+			}
+			else {
+				System.out.println("0 db szám megadását választotta, ezért a program leállt.");
+			}
 		} while (nS != n + 1);
 
 		sc.close();
@@ -24,12 +28,12 @@ public class NumberOfSessions {
 		printToConsole();
 	}
 
-	//Ha a 0-át egyszer ki kell írni
+//		Ha a 0-át egyszer ki kell írni
 
 	private static void printToConsole() {
 		for (int i = 0; i < numbers.length; i++) {
-			if (i == 0) {
-				System.out.print(i + "");
+			if (numbers[i] == 0) {
+				System.out.print("0");
 			}
 			for (int j = 0; j < numbers[i]; j++) {
 				System.out.print(numbers[i]);
@@ -38,15 +42,15 @@ public class NumberOfSessions {
 		}
 	}
 
-	// Ha a 0-át egyszer sem kell kiírni
-	// private static void printToConsole() {
-	// for (int i = 0; i < numbers.length; i++) {
-	// for (int j = 0; j < numbers[i]; j++) {
-	// System.out.print(numbers[i]);
-	// }
-	// System.out.println();
-	// }
-	// }
+// 		Ha a 0-át egyszer sem kell kiírni
+//	 private static void printToConsole() {
+//	 	for (int i = 0; i < numbers.length; i++) {
+//	 		for (int j = 0; j < numbers[i]; j++) {
+//	 			System.out.print(numbers[i]);
+//	 		}
+//	 		System.out.println();
+//	 	}
+//	 }
 
 	private static void getNumber() {
 
@@ -63,11 +67,14 @@ public class NumberOfSessions {
 	}
 
 	private static void getN() {
-		sc = new Scanner(System.in);
-		System.out.print("N: ");
-		n = sc.nextInt();
-		sc.nextLine();
-
+		do {
+			sc = new Scanner(System.in);
+			System.out.print("N: ");
+			n = sc.nextInt();
+			sc.nextLine();
+			if (n < 0) {
+				System.out.println("A megadot szám kisebb, mint 0.\nKérem adjon meg egy másik számot.");
+			}
+		} while (n < 0);
 	}
-
 }
