@@ -13,9 +13,10 @@ public class ArmstrongNumber {
 
 	public static void main(String[] args) {
 
-		getN();
+		//getN();
+		n = 1;
 		nOriginal = n;
-		long j = 0;
+		long j = 4498128791164624869L;
 		do {
 			nDigits = j;
 			if (j == 0) {
@@ -27,6 +28,8 @@ public class ArmstrongNumber {
 					long nLastDigit = (long) nDigits % 10;
 					nDigits = nDigits / 10;
 					nSum = nSum + (double) Math.pow(nLastDigit, length);
+					long nSumLong = Math.round (nSum);
+					System.out.println("nSumLong: " + nSumLong);
 				}
 				if (nSum == j) {
 					System.out.println(piece + " - Armstong szám: " + (long)nSum);
