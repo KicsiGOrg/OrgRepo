@@ -1,38 +1,37 @@
 import java.util.Scanner;
 
 public class ArmstrongNumber {
-
 	static Scanner sc;
+	static long nSum;
+	static long nDigits;
+	static long nLastDigitPow;
 	static int n;
 	static int length;
 	static int piece = 1;
-	static double nSum = 0;
 	static int nOriginal;
 	static long i;
-	static long nDigits;
 
 	public static void main(String[] args) {
 
-		//getN();
-		n = 1;
+		getN();
 		nOriginal = n;
-		long j = 4498128791164624869L;
+		long j = 0;
 		do {
 			nDigits = j;
 			if (j == 0) {
-				System.out.println(piece + " - Armstong szám: " + (long)nSum);
+				System.out.println(piece + " - Armstong szám: " + (long) nSum);
 				piece++;
 			} else {
 				length = (int) (Math.log10(j) + 1);
 				for (i = 0; i < length; i++) {
 					long nLastDigit = (long) nDigits % 10;
 					nDigits = nDigits / 10;
-					nSum = nSum + (double) Math.pow(nLastDigit, length);
-					long nSumLong = Math.round (nSum);
-					System.out.println("nSumLong: " + nSumLong);
+					pow(nLastDigit, length);
+					nSum = nSum + nLastDigitPow;
+					nLastDigitPow = 0;
 				}
 				if (nSum == j) {
-					System.out.println(piece + " - Armstong szám: " + (long)nSum);
+					System.out.println(piece + " - Armstong szám: " + (long) nSum);
 					piece++;
 				}
 				nSum = 0;
@@ -54,5 +53,49 @@ public class ArmstrongNumber {
 		} while (n > 50 || n < 1);
 		sc.close();
 		return n;
+	}
+
+	private static long pow(long nLastDigit, int length) {
+		int numberOfPows = 0;
+		if (length == 1) {
+			switch ((int) nLastDigit) {
+			case 1:
+				numberOfPows++;
+				return nLastDigitPow = 1;
+			case 2:
+				numberOfPows++;
+				return nLastDigitPow = 2;
+			case 3:
+				numberOfPows++;
+				return nLastDigitPow = 3;
+			case 4:
+				numberOfPows++;
+				return nLastDigitPow = 4;
+			case 5:
+				numberOfPows++;
+				return nLastDigitPow = 5;
+			case 6:
+				numberOfPows++;
+				return nLastDigitPow = 6;
+			case 7:
+				numberOfPows++;
+				return nLastDigitPow = 7;
+			case 8:
+				numberOfPows++;
+				return nLastDigitPow = 8;
+			case 9:
+				numberOfPows++;
+				return nLastDigitPow = 9;
+			}
+		}
+		if (numberOfPows == 0) {
+			nLastDigitPow = nLastDigit * nLastDigit;
+			numberOfPows++;
+		}
+		do {
+			nLastDigitPow = nLastDigitPow * nLastDigit;
+			numberOfPows++;
+		} while (numberOfPows < length - 1);
+		return nLastDigitPow;
 	}
 }
