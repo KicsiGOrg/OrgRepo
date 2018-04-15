@@ -14,6 +14,8 @@ public class ArmstrongNumber {
 	public static void main(String[] args) {
 
 		getN();
+		
+		long startTime = System.nanoTime();
 		nOriginal = n;
 		long j = 0;
 		do {
@@ -38,6 +40,10 @@ public class ArmstrongNumber {
 			}
 			j++;
 		} while (piece <= nOriginal);
+		long endTime   = System.nanoTime();
+		long totalTime = endTime - startTime;
+		double seconds = (double)totalTime / 1000000000.0;
+		System.out.println(seconds);
 	}
 
 	private static int getN() {
