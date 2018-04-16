@@ -15,7 +15,7 @@ public class ArmstrongNumber {
 
 		getN();
 		
-		long startTime = System.nanoTime();
+		long startTime = System.currentTimeMillis();
 		nOriginal = n;
 		long j = 0;
 		do {
@@ -40,10 +40,8 @@ public class ArmstrongNumber {
 			}
 			j++;
 		} while (piece <= nOriginal);
-		long endTime   = System.nanoTime();
-		long totalTime = endTime - startTime;
-		double seconds = (double)totalTime / 1000000000.0;
-		System.out.println(seconds);
+		//long endTime   = System.currentTimeMillis();
+		System.out.println("A futási idő: " + (System.currentTimeMillis() - startTime) / 1000 + " másodperc.");
 	}
 
 	private static int getN() {
