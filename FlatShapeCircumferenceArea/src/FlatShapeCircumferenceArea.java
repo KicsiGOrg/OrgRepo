@@ -1,6 +1,8 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+import javax.swing.SortingFocusTraversalPolicy;
+
 public class FlatShapeCircumferenceArea {
 
 	static Scanner sc;
@@ -104,7 +106,6 @@ public class FlatShapeCircumferenceArea {
 	private static void rombus() {
 		int eAxis;
 		int fAxis;
-		
 		do {
 			System.out.print("Kérem adja meg a rombusz \"e\" tengelyét [cm]: ");
 			eAxis = sc.nextInt();
@@ -127,17 +128,18 @@ public class FlatShapeCircumferenceArea {
 		double k = 4 * sideRombusA;
 		double t = (eAxis * fAxis) / 2;
 		System.out.println("A rombusz kerülete: " + df.format(k) + " cm");
-		System.out.println("A rombusz területe: " + df.format(t) + " cm");
+		System.out.println("A rombusz területe: " + df.format(t) + " cm\u00B2");
 	}
 
 	private static void trapeze() {
-
+		
 	}
 
 	private static void paralelogramma() {
+		int k;
+		double t;
 		int sideParalelogrammaA;
 		int sideParalelogrammaB;
-		String formation = "paralelogramma";
 		double delta;
 		do {
 			System.out.print("Kérem adja meg a paralelogramma \"a\" oldalát [cm]: ");
@@ -163,29 +165,68 @@ public class FlatShapeCircumferenceArea {
 				System.out.println("A megadott méret nem érvényes.\nKérem 0-nál nagyobb és 180-nál kisebb számot adjon meg.");
 			}
 		}while(delta > 180 || delta < 0);
-		int k = (2 * sideParalelogrammaA) + (2 * sideParalelogrammaB);
-		delta = Math.toRadians(delta);
-		double t = sideParalelogrammaA * sideParalelogrammaB * Math.sin(delta);
 		if(delta == 90) {
 			if(sideParalelogrammaA == sideParalelogrammaB) {
-				System.out.println("Azokat a paralelogrammákat, amiknek a belső szögeik derék szögűek és az oldalalaik egyenlőek, négyszetnek nevezzük.");
-				formation = "négyzet";
+				System.out.println("Azokat a paralelogrammákat, amiknek a belső szögeik derék szögűek, és az oldalalaik egyenlőek, négyzetnek nevezzük.");
 			}else{
-				System.out.println("Azokat a paralelogrammákat, amiknek a belső szögeik derék szögűek de az \"a\" és \"b\" oldalalaik nem egyenlőek, téglalapnak nevezzük.");
-				formation = "téglap";
+				System.out.println("Azokat a paralelogrammákat, amiknek a belső szögeik derék szögűek, de az \"a\" és \"b\" oldalalaik nem egyenlőek, téglalapnak nevezzük.");
 			}
 		}else {
 			if(sideParalelogrammaA == sideParalelogrammaB) {
-				System.out.println("Azokat a paralelogrammákat, amiknek a belső szögeik nem derék szögűek és az oldalalaik egyenlőek, rombusznak nevezzük.");
-				formation = "rombusz";
+				System.out.println("Azokat a paralelogrammákat, amiknek a belső szögeik nem derék szögűek, de az oldalalaik egyenlőek, rombusznak nevezzük.");
 			}
 		}
-		System.out.println("A " + formation + " kerülete: " + k + " cm");
-		System.out.println("A " + formation + " területe: " + df.format(t) + " cm\u00B2");
+		k = (2 * sideParalelogrammaA) + (2 * sideParalelogrammaB);
+		delta = Math.toRadians(delta);
+		t = sideParalelogrammaA * sideParalelogrammaB * Math.sin(delta);
+		System.out.println("A paralelogramma kerülete: " + k + " cm");
+		System.out.println("A paralelogramma területe: " + df.format(t) + " cm\u00B2");
 	}
 
 	private static void deltoid() {
+		int sideDeltoidA;
+		int sideDeltoidB;
+		int eAxis;
+		int fAxis;
+		do {
+			System.out.print("Kérem adja meg a deltoid \"a\" oldalát [cm]: ");
+			sideDeltoidA = sc.nextInt();
+			sc.nextLine();
+			if (sideDeltoidA <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (sideDeltoidA <= 0);
+		do {
+			System.out.print("Kérem adja meg a deltoid \"b\" oldalát [cm]: ");
+			sideDeltoidB = sc.nextInt();
+			sc.nextLine();
+			if (sideDeltoidB <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (sideDeltoidB <= 0);
+		do {
+			System.out.print("Kérem adja meg a deltoid \"e\" tengelyét [cm]: ");
+			eAxis = sc.nextInt();
+			sc.nextLine();
+			if (eAxis <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (eAxis <= 0);
+		do {
+			System.out.print("Kérem adja meg a deltoid \"f\" tengelyét [cm]: ");
+			fAxis = sc.nextInt();
+			sc.nextLine();
+			if (fAxis <= eAxis) {
+				System.out.println(
+						"A tengelyek hossza megegyezik, vagy a megadott méret túl kicsi\nKérem az \"e\" tengelynél ("
+								+ eAxis + ") nagyobb számot adjon meg.");
+			}
+		} while (fAxis <= eAxis);
 
+		double k = 2 * (sideDeltoidA + sideDeltoidA);
+		double t = (eAxis * fAxis) / 2;
+		System.out.println("A deltoid kerülete: " + k + " cm");
+		System.out.println("A deltoid területe: " + t + " cm\u00B2");
 	}
 
 	private static void circle() {
@@ -203,6 +244,29 @@ public class FlatShapeCircumferenceArea {
 	}
 
 	private static void ellipse() {
-
+		int eAxis;
+		int fAxis;
+		do {
+			System.out.print("Kérem adja meg az ellipszis \"e\" tengelyét [cm]: ");
+			eAxis = sc.nextInt();
+			sc.nextLine();
+			if (eAxis <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (eAxis <= 0);
+		do {
+			System.out.print("Kérem adja meg az ellipszis \"f\" tengelyét [cm]: ");
+			fAxis = sc.nextInt();
+			sc.nextLine();
+			if (fAxis <= eAxis) {
+				System.out.println(
+						"A tengelyek hossza megegyezik, vagy a megadott méret túl kicsi\nKérem az \"e\" tengelynél ("
+								+ eAxis + ") nagyobb számot adjon meg.");
+			}
+		} while (fAxis <= eAxis);
+		double k = 4 * (((Math.PI * eAxis * fAxis) + Math.pow(eAxis - fAxis, 2)) / (eAxis + fAxis));
+		double t = (eAxis / 2) * (fAxis /2) *  Math.PI;
+		System.out.println("Az ellipszis kerülete\u2248 " + df.format(k) + " cm");
+		System.out.println("Az ellipszis területe\u2248 " + df.format(t) + " cm\u00B2");
 	}
 }
