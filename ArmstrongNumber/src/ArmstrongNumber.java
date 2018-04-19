@@ -34,14 +34,13 @@ public class ArmstrongNumber {
 				}
 				if (nSum == j) {
 					System.out.println(piece + " - Armstong szám: " + (long) nSum);
+					System.out.println("A futási idő: " + (System.currentTimeMillis() - startTime) / 1000 + " másodperc.");
 					piece++;
 				}
 				nSum = 0;
 			}
 			j++;
 		} while (piece <= nOriginal);
-		//long endTime   = System.currentTimeMillis();
-		System.out.println("A futási idő: " + (System.currentTimeMillis() - startTime) / 1000 + " másodperc.");
 	}
 
 	private static int getN() {
