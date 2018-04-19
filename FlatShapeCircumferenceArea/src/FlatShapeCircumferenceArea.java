@@ -1,8 +1,6 @@
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import javax.swing.SortingFocusTraversalPolicy;
-
 public class FlatShapeCircumferenceArea {
 
 	static Scanner sc;
@@ -132,7 +130,43 @@ public class FlatShapeCircumferenceArea {
 	}
 
 	private static void trapeze() {
-		
+		int sideTrapezeA;
+		int sideTrapezeBD;
+		int sideTrapezeC;
+		do {
+			System.out.print("Kérem adja meg a trapéz \"a\" oldalát [cm]: ");
+			sideTrapezeA = sc.nextInt();
+			sc.nextLine();
+			if (sideTrapezeA <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (sideTrapezeA <= 0);
+		do {
+			System.out.print("Kérem adja meg a téglalap \"c\" oldalát [cm]: ");
+			sideTrapezeC = sc.nextInt();
+			sc.nextLine();
+			if (sideTrapezeC <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (sideTrapezeC <= 0);
+		do {
+			System.out.print("Kérem adja meg a téglalap \"b\" és \"d\" oldalát [cm]: ");
+			sideTrapezeBD = sc.nextInt();
+			sc.nextLine();
+			if (sideTrapezeBD <= 0) {
+				System.out.println("A megadott méret túl kicsi, kérem 0-nál nagyobb számot adjon meg.");
+			}
+		} while (sideTrapezeBD <= 0);
+		double a = sideTrapezeA - sideTrapezeC;
+		a = a / 2;
+		double c = sideTrapezeBD;
+		double m = Math.sqrt((Math.pow(c, 2) - Math.pow(a, 2)));
+		int k = sideTrapezeA + sideTrapezeC + (2 * sideTrapezeBD);
+		double t = sideTrapezeA + sideTrapezeC;
+		t = t / 2;
+		t = t*m;
+		System.out.println("A téglalap kerülete: " + k + " cm");
+		System.out.println("A téglalap területe: " + df.format(t) + " cm\u00B2");
 	}
 
 	private static void paralelogramma() {
