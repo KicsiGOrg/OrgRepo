@@ -1,0 +1,3 @@
+public enum Transmission {
+    AUTOMATIC, FOUR_GEARS_MANUAL, SIX_GEARS_MANUAL, SEMI_AUTOMATIC;
+}
