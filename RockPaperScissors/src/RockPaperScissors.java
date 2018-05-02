@@ -1,122 +1,105 @@
 import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Set;
 
-public class RockPaperScissors {
-
+public class RockPaperScissors implements IGame {
 	/*
-	 * Készítsd el a Kő-papír-olló játék konzolos verzióját.
-	 * 
-	 * KÉSZ - Olvasson be a felhasználótól két nevet
- 	 * amikor az adott játékos következik, írja ki neki, hogy ő következik,
- 	 * illetve hogy hányadik menetnél járnak, mennyi az állás (kinek hány pontja van, mennyi a döntetlen).
-	 * 
-	 * Kezdésnél meg lehessen adni, hogy hány kört szeretnének játszani.
-	 * 
-	 * Lehessen úgy is játékot játszani, hogy kezdésnél azt adják meg, hogy hány
-	 * szerzett pontig menjen a játék.
-	 * 
-	 * Miután a játék véget ért, készítsen statisztikát arról, hány kört nyert az
-	 * egyik, illetve másik játékos és hogy mennyi lett a döntetlen.
-	 * 
-	 * Olyan statisztika is legyen, amelyik kiírja, hogy az egyik, illetve a másik
-	 * játékos hányszor játszotta meg a kőt, a papírt, vagy az ollót, és ezek
-	 * megjátszása során mennyi volt a győztes, vesztes, döntetlen kör. 
+	 * Statisztika a játék során mennyi volt a győztes, vesztes, döntetlen kör (jelekre bontva! A győztes és a döntetlen készen van!).
 	 * 
 	 * Ugyanerről a két játékos összesített statisztikát is írja ki.
 	 */
 
-	static int menuIndex;
+	static Random random = new Random();
+	static Scanner sc = new Scanner(System.in);
+	static int round = 1;
+	static HashMap<Integer, Integer> menuIndex;
 	static int endOfPoint;
 	static int endOfRound;
-	static String userNameA;
-	static String userNameB;
-	static HashMap<Integer, String> setOfValues;
-	
+	static int gameEqual = 0;
+	static User userA;
+	static User userB;
+
 	public static void main(String[] args) {
-
-		System.out.println("Kö papír ólló játék.");
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Menü\n**********************\n1 - Játék a megadott körökig\n2 - Játék a megadott pontszámig\n");
-		int round = 1;
-		int point = 1;
-		int index = 1;
-		setHashMapValue();
-		index = getPlayerName(sc, index);
-		selectFromTheMenu(sc);
-		System.out.println("endOfRound: " + endOfRound);
-		System.out.println("endOfPoint: " + endOfPoint);
-		
-		
-		switch (menuIndex) {
-		case 1:
-			for(int i = 0; i < endOfRound; i++) {
-				Random random = new Random();
-				random.nextInt();
-				
-				/*
-				 * 
-				 * Innen kell folytatni!
-				 * 
-				 */
-				
-				
-				
-			}
-			break;
-		case 2:
-			break;
-		}
+		IGame.welcome();
+		menuIndex = IGame.selectFromTheMenu();
+		userA = new User(1);
+		userB = new User(2);
+		gamePlay();
+		IGame.statics(userA, userB, gameEqual);
 		sc.close();
-
-		
 	}
 
-	private static void setHashMapValue() {
+	private static void gamePlay() {
+		Set<Integer> index = menuIndex.keySet();
+		for (Integer key : index) {
+			switch (key) {
+			case 1:
+				for (int i = 0; i < menuIndex.get(key); i++) {
+					game();
+				}
+				break;
+			case 2:
+				do {
+					game();
+				} while (menuIndex.get(key) > userA.userWin && menuIndex.get(key) > userB.userWin);
+				break;
+			}
+		}
+	}
+
+	private static void game() {
+		HashMap<Integer, String> setOfValues;
 		setOfValues = new HashMap<Integer, String>();
-		setOfValues.put(1,"Kő");
-		setOfValues.put(2,"Papír");
-		setOfValues.put(3,"Olló");
-	}
-
-
-	private static int selectFromTheMenu(Scanner sc) {
-		do {
-		System.out.print("Kérem válasszon a menüből: ");
-		menuIndex = sc.nextInt();
-		sc.nextLine();
-		if(menuIndex != 1 && menuIndex != 2) {
-			System.out.println("A megadott menüszám hibás.");
+		setOfValues.put(0, "Kő");
+		setOfValues.put(1, "Papír");
+		setOfValues.put(2, "Olló");
+		userA.randomNumberAndSignChecker();
+		userB.randomNumberAndSignChecker();
+		System.out.println(round + " kör: " + userA.userName + " " + setOfValues.get(userA.userRandomNumber) + " - "
+				+ userB.userName + " " + setOfValues.get(userB.userRandomNumber));
+		if (userA.userRandomNumber == userB.userRandomNumber) {
+			System.out.println("Döntetlen.");
+			gameEqual++;
+			switch (userA.userRandomNumber) {
+			case 0:
+				userA.drawRock++;
+				break;
+			case 1:
+				userA.drawPaper++;
+				break;
+			case 2:
+				userA.drawScissors++;
+				break;
+			}
+		} else if (userA.userRandomNumber == 1) {
+			if (userB.userRandomNumber == 2) {
+				IGame.bUserWin(userB);
+				userB.winPaper++;
+			} else {
+				IGame.aUserWin(userA);
+				userA.winRock++;
+			}
+		} else if (userA.userRandomNumber == 2) {
+			if (userB.userRandomNumber == 1) {
+				IGame.aUserWin(userA);
+				userA.winPaper++;
+			} else {
+				IGame.bUserWin(userB);
+				userB.winScissors++;
+			}
+		} else {
+			if (userB.userRandomNumber == 1) {
+				IGame.bUserWin(userB);
+				userB.winPaper++;
+			} else {
+				IGame.aUserWin(userA);
+				userA.winRock++;
+			}
 		}
-		}while(menuIndex != 1 && menuIndex != 2);
-		switch(menuIndex) {
-		case 1: 
-			System.out.print("Add meg hány körig menjen a játék: ");
-			endOfRound = sc.nextInt();
-			sc.nextLine();
-			break;
-		case 2: 
-			System.out.print("Add meg hány pontig menjen a játék: ");
-			endOfPoint = sc.nextInt();
-			sc.nextLine();
-			break;
-		}
-		return menuIndex;
-	}
-
-	private static int getPlayerName(Scanner sc, int index) {
-		do {
-		System.out.print("Kérem adja meg az " + index + " játékos nevét: ");
-		if(index == 1) {
-			userNameA = sc.nextLine();
-			index++;
-		}else {
-			userNameB = sc.nextLine();
-			index++;
-		}
-		}while (index != 3);
-		return index;
+		System.out.println("A játék állása: \n" + userA.userName + " - " + userA.userWin + " \\ " + userB.userName
+				+ " - " + userB.userWin + "\nDönetetlen: " + gameEqual + "\n");
+		round++;
 	}
 
 }
