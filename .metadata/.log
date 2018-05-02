@@ -5193,22 +5193,37 @@ Java Model Exception: Java Model Status [TextField.class [in javafx.scene.contro
 	at org.eclipse.fx.ide.fxml.editors.FXMLTextHover.getHoverInfo2(FXMLTextHover.java:317)
 	at org.eclipse.wst.sse.ui.internal.taginfo.BestMatchHover.getHoverInfo2(BestMatchHover.java:139)
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+<<<<<<< Updated upstream
 !SESSION 2018-04-25 18:01:26.748 -----------------------------------------------
 eclipse.buildId=4.7.3.M20180330-0640
+=======
+!SESSION 2018-04-27 10:23:34.852 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180301-0715
+>>>>>>> Stashed changes
 java.version=1.8.0_161
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.egit.ui 2 0 2018-04-25 18:01:33.749
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Gergo'. If this is
+=======
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-27 10:23:47.862
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+>>>>>>> Stashed changes
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-25 18:01:35.373
+=======
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-27 10:23:51.576
+>>>>>>> Stashed changes
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
 !STACK 0
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
@@ -5228,6 +5243,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
+<<<<<<< Updated upstream
 
 !ENTRY org.eclipse.fx.ide.model 4 0 2018-04-25 18:32:09.925
 !MESSAGE Unable to retrieve properties of 'javafx.scene.control.TextInputControl'
@@ -5486,20 +5502,34 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 !MESSAGE Invalid stack frame
 !SESSION 2018-04-29 05:27:28.349 -----------------------------------------------
 eclipse.buildId=4.7.3.M20180330-0640
+=======
+!SESSION 2018-04-27 11:51:49.406 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180301-0715
+>>>>>>> Stashed changes
 java.version=1.8.0_161
 java.vendor=Oracle Corporation
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=hu_HU
 Framework arguments:  -product org.eclipse.epp.package.java.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.egit.ui 2 0 2018-04-29 05:27:43.167
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\Gergo'. If this is
+=======
+!ENTRY org.eclipse.egit.ui 2 0 2018-04-27 11:52:05.306
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Balogh Geri'. If this is
+>>>>>>> Stashed changes
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< Updated upstream
 !ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-29 05:27:45.643
+=======
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2018-04-27 11:52:09.902
+>>>>>>> Stashed changes
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<. ; version: 2.0.7.v20170906-1327
 !STACK 0
 com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4 column 10 path $.<<<<<<<
@@ -5519,6 +5549,7 @@ Caused by: com.google.gson.stream.MalformedJsonException: Expected ':' at line 4
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:218)
 	at com.google.gson.Gson.fromJson(Gson.java:887)
 	... 8 more
+<<<<<<< Updated upstream
 
 !ENTRY org.eclipse.recommenders.models.rcp 1 11 2018-04-29 05:29:24.489
 !MESSAGE The model index service was accessed either before it started or after it finished running.
@@ -5771,3 +5802,5 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1499)
+=======
+>>>>>>> Stashed changes
