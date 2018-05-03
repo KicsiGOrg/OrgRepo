@@ -39,5 +39,9 @@ public class User {
 	int winRock;
 	int winPaper;
 	int winScissors;
+	int round = 1;
+	int lossRock;
+	int lossPaper;
+	int lossScissors;
 	
 }
