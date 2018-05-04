@@ -32,9 +32,13 @@ public class MathematicalCalculation {
 		double a = 0.0;
 		for(int i = 1; i <= input; i++) {
 			if(i % 2 == 0) {
+				System.out.println("a: " + a);
+				System.out.println("Nevező: " + denominator);
 				a = a - (1 / denominator);
 				denominator+=2;
 			}else {
+				System.out.println("a: " + a);
+				System.out.println("Nevező: " + denominator);
 				a = a + (1.0 / denominator);
 				denominator+=2;
 			}
