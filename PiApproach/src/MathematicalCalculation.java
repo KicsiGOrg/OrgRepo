@@ -16,12 +16,30 @@ public class MathematicalCalculation {
 		double counter = Math.sqrt(2.0);
 		double a = 0.0;
 		for (int i = 1; i <= input; i++) {
-			if(i== 1) {
-				a = (counter/2);
-			}else {
-				a = (a) * (Math.sqrt(2.0 + counter)/2);
+			if (i == 1) {
+				a = counter;
+			} else {
+				a = ((a) * (Math.sqrt(2.0 + counter)));
 			}
 		}
-		System.out.println(a);
+		a = a / (Math.pow(2, input));
+		System.out.print(a);
+	}
+	
+	public static void liebniz(int input) {
+		System.out.print("\nLiebniz féle sor alapján a \u03C0 / 4 közelítő értéke = ");
+		double denominator = 3.0;
+		double a = 0.0;
+		for(int i = 1; i <= input; i++) {
+			if(i % 2 == 0) {
+				a = a - (1 / denominator);
+				denominator+=2;
+			}else {
+				a = a + (1.0 / denominator);
+				denominator+=2;
+			}
+		}
+		a = 1 - a;
+		System.out.print(a);
 	}
 }

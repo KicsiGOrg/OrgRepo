@@ -7,5 +7,6 @@ public class PiApproach {
 		int input = WelcomeAndGetNumber.getNumber();
 		MathematicalCalculation.eulersLine(input);
 		MathematicalCalculation.vietleLine(input);
+		MathematicalCalculation.liebniz(input);
 	}
 }
