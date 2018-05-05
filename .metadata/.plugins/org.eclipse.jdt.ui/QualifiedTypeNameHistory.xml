@@ -1,23 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="sun.launcher.resources.launcher"/>
-<fullyQualifiedTypeName name="javafx.application.Application"/>
-<fullyQualifiedTypeName name="javafx.scene.control.Button"/>
-<fullyQualifiedTypeName name="javafx.scene.transform.Scale"/>
-<fullyQualifiedTypeName name="javafx.scene.Scene"/>
-<fullyQualifiedTypeName name="com.sun.corba.se.pept.transport.EventHandler"/>
-<fullyQualifiedTypeName name="javafx.event.EventHandler"/>
-<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
-<fullyQualifiedTypeName name="javax.sound.midi.Soundbank"/>
-<fullyQualifiedTypeName name="javafx.scene.control.TitledPane"/>
-<fullyQualifiedTypeName name="javafx.scene.layout.Pane"/>
-<fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
 <fullyQualifiedTypeName name="javafx.fxml.Initializable"/>
 <fullyQualifiedTypeName name="javafx.fxml.FXML"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.runtime.RuntimeUtil.ToStringAdapter"/>
 <fullyQualifiedTypeName name="Car"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.dom.PSVIDOMImplementationImpl"/>
-<fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="CarType"/>
 <fullyQualifiedTypeName name="java.text.DateFormat"/>
 <fullyQualifiedTypeName name="java.util.Calendar"/>
@@ -40,7 +27,6 @@
 <fullyQualifiedTypeName name="IGame"/>
 <fullyQualifiedTypeName name="com.sun.glass.ui.MenuItem"/>
 <fullyQualifiedTypeName name="sun.swing.MenuItemCheckIconFactory"/>
-<fullyQualifiedTypeName name="java.security.MessageDigest"/>
 <fullyQualifiedTypeName name="java.util.Formatter"/>
 <fullyQualifiedTypeName name="java.security.NoSuchAlgorithmException"/>
 <fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
@@ -54,10 +40,24 @@
 <fullyQualifiedTypeName name="Copy"/>
 <fullyQualifiedTypeName name="Sorting"/>
 <fullyQualifiedTypeName name="Assortment"/>
-<fullyQualifiedTypeName name="GetInput"/>
 <fullyQualifiedTypeName name="sun.tools.java.Imports"/>
 <fullyQualifiedTypeName name="com.sun.tools.javac.parser.Scanner"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="CreateAnArray"/>
 <fullyQualifiedTypeName name="PrintArray"/>
+<fullyQualifiedTypeName name="Controller"/>
+<fullyQualifiedTypeName name="Evaluation"/>
+<fullyQualifiedTypeName name="GreetingAndMenu"/>
+<fullyQualifiedTypeName name="GetInput"/>
+<fullyQualifiedTypeName name="GreetingAndSayGoodBy"/>
+<fullyQualifiedTypeName name="Information"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.security.MessageDigest"/>
+<fullyQualifiedTypeName name="java.nio.charset.StandardCharsets"/>
+<fullyQualifiedTypeName name="Sha256Crypter"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="ReRunOrExit"/>
+<fullyQualifiedTypeName name="Input"/>
+<fullyQualifiedTypeName name="com.sun.deploy.security.SelectableSecurityManager"/>
+<fullyQualifiedTypeName name="Calculator"/>
+<fullyQualifiedTypeName name="Variables"/>
 </qualifiedTypeNameHistroy>

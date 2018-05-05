@@ -10,7 +10,7 @@ public class DateChecker {
 
 	static Scanner sc;
 	static int year;
-	static int month;
+	static int week;
 	
 	public static void main(String[] args) {
 		getDatas();
@@ -19,10 +19,10 @@ public class DateChecker {
 
 	private static void outputInformation() {
 		GregorianCalendar gc = new GregorianCalendar();
-		gc.setWeekDate(year, month, Calendar.MONDAY);  														//A hét napjának megadásával lehet megadni, hogy a rendszer melyik napot vizsgálja.
-		System.out.println(year + " " + month + ". hetének hétfője = " + gc.get(Calendar.DAY_OF_MONTH));
-		gc.setWeekDate(year, month, Calendar.SUNDAY);														//A hét napjának megadásával lehet megadni, hogy a rendszer melyik napot vizsgálja.
-		System.out.println(year + " " + month + ". hetének vasárnapja = " + gc.get(Calendar.DAY_OF_MONTH));
+		gc.setWeekDate(year, week, Calendar.MONDAY);  														//A hét napjának megadásával lehet megadni, hogy a rendszer melyik napot vizsgálja.
+		System.out.println(year + " " + week + ". hetének hétfője = " + gc.get(Calendar.DAY_OF_MONTH));
+		gc.setWeekDate(year, week, Calendar.SUNDAY);														//A hét napjának megadásával lehet megadni, hogy a rendszer melyik napot vizsgálja.
+		System.out.println(year + " " + week + ". hetének vasárnapja = " + gc.get(Calendar.DAY_OF_MONTH));
 	}
 
 	private static void getDatas() {
@@ -30,8 +30,8 @@ public class DateChecker {
 		System.out.print("Kérem adja meg az évszámot: ");
 		year = sc.nextInt();
 		sc.nextLine();
-		System.out.print("Kérem adja meg a hónapot: ");
-		month = sc.nextInt();
+		System.out.print("Kérem adja meg a hetet: ");
+		week = sc.nextInt();
 		sc.nextLine();
 		sc.close();
 	}

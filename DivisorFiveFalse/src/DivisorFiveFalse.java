@@ -1,7 +1,7 @@
 public class DivisorFiveFalse {
 
 	public static void main(String[] args) {
-		solutuinOne();
+		solutionOne();
 		soulutionTwo();
 		solutionThree();
 	}
@@ -29,7 +29,7 @@ public class DivisorFiveFalse {
 		System.out.println("\nEnd of Solution 2!\n");
 	}
 
-	private static void solutuinOne() {
+	private static void solutionOne() {
 		for (int i = 10; i < 100; i++) {
 			if (i % 5 != 0) {
 				System.out.println(i);
