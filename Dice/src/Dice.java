@@ -12,12 +12,9 @@ public class Dice {
 	static int diceSix= 0;
 
 	public static void main(String[] args) {
-		
 		int[] diceNumbers = {1,2,3,4,5,6};
-
 		System.out.println("Kocka dobás számláló program.\n\nHányszor dobjak a kockával?");
 		int number = 0; 
-
 		number = getNumber();
 		throwMethod(diceNumbers, number);
 		printThrow(number);
