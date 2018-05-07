@@ -9,8 +9,8 @@ public class RockPaperScissors  {
 	static HashMap<Integer, Integer> gameOverIndex;
 	static int endOfPoint;
 	static int endOfRound;
-	static user userA;
-	static user userB;
+	static User userA;
+	static User userB;
 	static int playModeNumber;
 
 	public static void main(String[] args) {

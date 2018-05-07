@@ -8,47 +8,69 @@ public class Game {
 	static Scanner sc = new Scanner(System.in);
 	static int menuIndex;
 	static int userSign;
-	
+	static int userTwoSign;
+
+	/**
+	 * Welcome üzenet kiíratás
+	 */
 	public static void welcome() {
 		System.out.println("Kő papír olló\n");
 	}
-
+	
+	/**
+	 * Menü kiíratás
+	 */
 	public static void menu() {
 		System.out.println(
 				"\n          Játékmenet\n*******************************\n1 - Játék a megadott körökig\n2 - Játék a megadott pontszámig\n");
 	}
 
-	public static void statics(user userA, user userB) {
+	/**
+	 * Statisztikák kiíratása
+	 * @param userA
+	 * @param userB
+	 * 
+	 *            Statisztika kiírása userenként. - Győzelmi statisztika - Jel
+	 *            statisztika - Jelek szerinti győzelmek és vesztések összesítése
+	 *            user-re bontva. - Döntetlenek összesítése és jelekre bontása
+	 * 
+	 */
+	public static void printStatistics(User userA, User userB) {
 		System.out.println("--------------------------Statisztikák--------------------------");
 		System.out.println("\nGyőzelmi statisztika:\n" + userA.userName + ": " + userA.userWin + " győzelem.\n"
-				+ userB.userName + ": " + userB.userWin + " győzelem.\n" + userA.gameEqual
-				+ " döntetlen.\n\n----------------------------------------------------------------");
-		System.out.println("\nJel statisztika:\n" + userA.userName + "\n Kő: " + userA.userRock + "\n Papír: "
-				+ userA.userPaper + "\n Olló: " + userA.userScissors + "\n" + userB.userName + "\n Kő: "
-				+ userB.userRock + "\n Papír: " + userB.userPaper + "\n Olló: " + userB.userScissors
+				+ userB.userName + ": " + userB.userWin + " győzelem.\n" + userA.gameEqual + " döntetlen:" + "\n Kő: "
+				+ userA.drawRock + "\n Papír: " + userA.drawPaper + "\n Olló: " + userA.drawScissors
 				+ "\n\n----------------------------------------------------------------");
-		System.out.println("\n" + userA.userName + "\n Kővel nyert: " + userA.winRock + "\n Kővel vesztett: "
-				+ userA.lossRock + "\n Papírral nyert: " + userA.winPaper + "\n Papírral vesztett: " + userA.lossPaper
-				+ "\n Ollóval nyert: " + userA.winScissors + "\n Ollóval vesztett: " + userA.lossScissors + "\n"
-				+ userB.userName + "\n Kővel nyert: " + userB.winRock + "\n Kővel vesztett: " + userB.lossRock
-				+ "\n Papírral nyert: " + userB.winPaper + "\n Papírral vesztett: " + userB.lossPaper
-				+ "\n Ollóval nyert: " + userB.winScissors + "\n Ollóval vesztett: " + userB.lossScissors
-				+ "\n\n----------------------------------------------------------------");
-		System.out.print("\nA játék során " + userA.gameEqual + " dönetetlen született:" + "\n Kő: " + userA.drawRock
-				+ "\n Papír: " + userA.drawPaper + "\n Olló: " + userA.drawScissors
-				+ "\n\n----------------------------------------------------------------");
+		System.out.println("\nJel statisztika:\n" + userA.userName + "\n Kő: " + userA.userRock + "\n Kővel nyert: "
+				+ userA.winRock + "\n Kővel vesztett: " + userA.lossRock + "\n Papír: " + userA.userPaper
+				+ "\n Papírral nyert: " + userA.winPaper + "\n Papírral vesztett: " + userA.lossPaper + "\n Olló: "
+				+ userA.userScissors + "\n Ollóval nyert: " + userA.winScissors + "\n Ollóval vesztett: "
+				+ userA.lossScissors + "\n\n" + userB.userName + "\n Kő: " + userB.userRock + "\n Kővel nyert: "
+				+ userB.winRock + "\n Kővel vesztett: " + userB.lossRock + "\n Papír: " + userB.userPaper
+				+ "\n Papírral nyert: " + userB.winPaper + "\n Papírral vesztett: " + userB.lossPaper + "\n Olló: "
+				+ userB.userScissors + "\n Ollóval nyert: " + userB.winScissors + "\n Ollóval vesztett: "
+				+ userB.lossScissors + "\n\n----------------------------------------------------------------");
 	}
 
-	public static void aUserWin(user userA) {
-		System.out.println(userA.userName + " győztél.");
-		userA.userWin++;
+	/**
+	 * Győzelmek vezetése
+	 * @param userA
+	 * 
+	 *            Kiírja a győztes nevét és növeli a győzelmek számát.
+	 */
+	public static void userWin(User user) {
+		System.out.println(user.userName + " győztél.");
+		user.userWin++;
 	}
 	
-	public static void bUserWin(user userB) {
-		System.out.println(userB.userName + " győztél.");
-		userB.userWin++;
-	}
-
+	/**
+	 * Játékmód választás és játék vége megadása
+	 * @return
+	 * 
+	 * 		A user választja ki, hogy a játékot körök vagy pontszám alapján
+	 *         szeretné futtatni. A választása után megadhatja, hogy hány körig vagy
+	 *         hány győztes menetig menjen a játék.
+	 */
 	public static HashMap<Integer, Integer> selectFromTheMenu() {
 		int endOfPoint;
 		int endOfRound;
@@ -93,7 +115,19 @@ public class Game {
 		return response;
 	}
 
-	public static void gamePlay(user userA, user userB, HashMap<Integer, Integer> menuIndex, int playModeMenuNumber) {
+	/**
+	 * Játékmenet controller
+	 * @param userA
+	 * @param userB
+	 * @param menuIndex
+	 * @param playModeMenuNumber
+	 * 
+	 *            Játékmenet elágazása a menuIndex alapján. 
+	 *            1 - Körökszámáig tartó játékmenet (for ciklusban) 
+	 *            2 - Pontszámokig tartó játékmenet (do while ciklusban)
+	 * 
+	 */
+	public static void gamePlay(User userA, User userB, HashMap<Integer, Integer> menuIndex, int playModeMenuNumber) {
 		Set<Integer> index = menuIndex.keySet();
 		for (Integer key : index) {
 			switch (key) {
@@ -111,18 +145,40 @@ public class Game {
 		}
 	}
 
-	private static void game(user userA, user userB, int playModeMenuNumber) {
+	/**
+	 * Játékmenet
+	 * @param userA
+	 * @param userB
+	 * @param playModeMenuNumber
+	 * 
+	 *            playModeMenuNumber változóban kapott szám alapján: - 1 - random
+	 *            generál mind a két játékos számára "jelet" - 2 - a user ad be
+	 *            "jelet" és a program random generál a második játékos számára
+	 *            "jelet".
+	 * 
+	 *            Amikor a program ugyanazt a "jelet" kapja mind a két játékostól,
+	 *            akkor döntetlen és növeli a "bemutatott" jelhez tartozó változó
+	 *            értékét.
+	 * 
+	 *            A játékmenettől függetlenül az első játékos által bemutatott jel
+	 *            alapján rögzíti: 
+	 *            - a győzelmet/vesztést 
+	 *            - a győztes/vesztes szimbólumot.
+	 * 
+	 *            Minden lefutott kör után kiírja a játék aktuális állását.
+	 */
+	private static void game(User userA, User userB, int playModeMenuNumber) {
 		Map<Integer, String> setOfValues = Map.of(0, "Kő", 1, "Papír", 2, "Olló");
-		if(playModeMenuNumber == 1) {
+		if (playModeMenuNumber == 1) {
 			userSign = userA.randomNumberAndSignChecker();
-			userB.randomNumberAndSignChecker();
-		}else {
+			userTwoSign = userB.randomNumberAndSignChecker();
+		} else {
 			userSign = userA.getUserSign(sc);
-			userB.randomNumberAndSignChecker();
+			userTwoSign = userB.randomNumberAndSignChecker();
 		}
-		System.out.println(userA.round + " kör: " + userA.userName + " " + setOfValues.get(userSign)
-				+ " - " + userB.userName + " " + setOfValues.get(userB.userRandomNumber));
-		if (userSign == userB.userRandomNumber) {
+		System.out.println(userA.round + " kör: " + userA.userName + " " + setOfValues.get(userSign) + " - "
+				+ userB.userName + " " + setOfValues.get(userTwoSign));
+		if (userSign == userTwoSign) {
 			System.out.println("Döntetlen.");
 			userA.gameEqual++;
 			switch (userSign) {
@@ -138,32 +194,32 @@ public class Game {
 			}
 		} else {
 			if (userSign == 1) {
-				if (userB.userRandomNumber == 2) {
-					Game.bUserWin(userB);
+				if (userTwoSign == 2) {
+					Game.userWin(userB);
 					userB.winScissors++;
 					userA.lossPaper++;
 				} else {
-					Game.aUserWin(userA);
+					Game.userWin(userA);
 					userA.winPaper++;
 					userB.lossRock++;
 				}
 			} else if (userSign == 2) {
-				if (userB.userRandomNumber == 1) {
-					Game.aUserWin(userA);
+				if (userTwoSign == 1) {
+					Game.userWin(userA);
 					userA.winScissors++;
 					userB.lossPaper++;
 				} else {
-					Game.bUserWin(userB);
+					Game.userWin(userB);
 					userB.winRock++;
 					userA.lossScissors++;
 				}
 			} else {
-				if (userB.userRandomNumber == 1) {
-					Game.bUserWin(userB);
+				if (userTwoSign == 1) {
+					Game.userWin(userB);
 					userB.winPaper++;
 					userA.lossRock++;
 				} else {
-					Game.aUserWin(userA);
+					Game.userWin(userA);
 					userA.winRock++;
 					userB.lossScissors++;
 				}

@@ -4,7 +4,15 @@ import java.util.Scanner;
 public class PlayMode {
 
 	static int playModeMenuNumber = 0;
-	
+
+	/**
+	 * Játékosmód választás
+	 * @param sc
+	 * @return playModeMenuNumber
+	 * 
+	 *         1 - CPU vs. CPU 2 - Felhasználó vs. CPU
+	 * 
+	 */
 	public static int selectPlayerMode (Scanner sc) {
 		System.out.println("         Játékos mód\n******************************\n 1 - CPU vs. CPU\n 2 - Felhasználó vs. CPU\n");
 		do {
@@ -25,18 +33,28 @@ public class PlayMode {
 		return playModeMenuNumber;
 	}
 	
-	public static void game(user userA, user userB, int playModeMenuNumber, HashMap<Integer, Integer> gameOverIndex) {
+	/**
+	 * Játék
+	 * 
+	 * @param userA
+	 * @param userB
+	 * @param playModeMenuNumber
+	 * @param gameOverIndex
+	 * 
+	 *            selectPlayerMode-ban választott pont alapján folytatódik a játék
+	 *            gép a gép ellen vagy felhasználó a gép elleni módban.
+	 * 
+	 */
+	public static void game(User userA, User userB, int playModeMenuNumber, HashMap<Integer, Integer> gameOverIndex) {
 		if(playModeMenuNumber == 1) {
-			userA = new user(1);
-			userB = new user(2);
+			userA = new User(1, playModeMenuNumber);
+			userB = new User(2, playModeMenuNumber);
 			Game.gamePlay(userA, userB, gameOverIndex, playModeMenuNumber);
 		}else {
-			userA = new user(1);
-			userB = new user(2);
+			userA = new User(1, playModeMenuNumber);
+			userB = new User(2, playModeMenuNumber);
 			Game.gamePlay(userA, userB, gameOverIndex, playModeMenuNumber);
 		}
-		Game.statics(userA, userB);
+		Game.printStatistics(userA, userB);
 	}
-	
-	
 }
