@@ -14,7 +14,7 @@ public class RockPaperScissors  {
 	static int playModeNumber;
 
 	public static void main(String[] args) {
-		Game.welcome();
+		Game.printWelcome();
 		playModeNumber = PlayMode.selectPlayerMode(sc);
 		gameOverIndex = Game.selectFromTheMenu();
 		PlayMode.game(userA, userB, playModeNumber, gameOverIndex);
