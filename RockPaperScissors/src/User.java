@@ -23,14 +23,28 @@ public class User {
 	int lossPaper;
 	int lossScissors;
 	static int userSign;
-	
+
+	/**
+	 * Névmegadás
+	 * 
+	 * @param i
+	 * @param playModeMenuNumber
+	 * 
+	 *            Névmegadás a játékmód alapján.
+	 * 
+	 */
 	public User(int i, int playModeMenuNumber) {
-		System.out.print("Kérem adja meg az " + i + " játékos nevét: ");
-		this.userName = sc.nextLine();
-		if(playModeMenuNumber == 2 && i != 1) {
-			System.out.print("A gépi játékos neve: CPU");
-			this.userName = "CPU";
-			
+		if (playModeMenuNumber == 1) {
+			System.out.print("Kérem adja meg az " + i + " gépi játékos nevét: ");
+			this.userName = sc.nextLine();
+		} else {
+			if (i == 1) {
+				System.out.print("Kérem adja meg a játékos nevét: ");
+				this.userName = sc.nextLine();
+			} else {
+				System.out.print("A gépi játékos neve: CPU\n\n");
+				this.userName = "CPU";
+			}
 		}
 	}
 	

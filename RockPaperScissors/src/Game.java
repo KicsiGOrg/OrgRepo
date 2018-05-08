@@ -13,14 +13,14 @@ public class Game {
 	/**
 	 * Welcome üzenet kiíratás
 	 */
-	public static void welcome() {
-		System.out.println("Kő papír olló\n");
+	public static void printWelcome() {
+		System.out.println("        Kő papír olló\n");
 	}
 	
 	/**
 	 * Menü kiíratás
 	 */
-	public static void menu() {
+	public static void printMenu() {
 		System.out.println(
 				"\n          Játékmenet\n*******************************\n1 - Játék a megadott körökig\n2 - Játék a megadott pontszámig\n");
 	}
@@ -58,7 +58,7 @@ public class Game {
 	 * 
 	 *            Kiírja a győztes nevét és növeli a győzelmek számát.
 	 */
-	public static void userWin(User user) {
+	public static void printUserWin(User user) {
 		System.out.println(user.userName + " győztél.");
 		user.userWin++;
 	}
@@ -195,31 +195,31 @@ public class Game {
 		} else {
 			if (userSign == 1) {
 				if (userTwoSign == 2) {
-					Game.userWin(userB);
+					Game.printUserWin(userB);
 					userB.winScissors++;
 					userA.lossPaper++;
 				} else {
-					Game.userWin(userA);
+					Game.printUserWin(userA);
 					userA.winPaper++;
 					userB.lossRock++;
 				}
 			} else if (userSign == 2) {
 				if (userTwoSign == 1) {
-					Game.userWin(userA);
+					Game.printUserWin(userA);
 					userA.winScissors++;
 					userB.lossPaper++;
 				} else {
-					Game.userWin(userB);
+					Game.printUserWin(userB);
 					userB.winRock++;
 					userA.lossScissors++;
 				}
 			} else {
 				if (userTwoSign == 1) {
-					Game.userWin(userB);
+					Game.printUserWin(userB);
 					userB.winPaper++;
 					userA.lossRock++;
 				} else {
-					Game.userWin(userA);
+					Game.printUserWin(userA);
 					userA.winRock++;
 					userB.lossScissors++;
 				}

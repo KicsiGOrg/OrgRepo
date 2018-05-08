@@ -29,7 +29,7 @@ public class PlayMode {
 				System.out.println("A megadott input nem értelmezett.");
 			}
 		}while(playModeMenuNumber < 1 || playModeMenuNumber > 2);
-		Game.menu();
+		Game.printMenu();
 		return playModeMenuNumber;
 	}
 	
