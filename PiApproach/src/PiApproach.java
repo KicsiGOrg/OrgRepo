@@ -5,7 +5,7 @@ public class PiApproach {
 	public static void main(String[] args) {
 		WelcomeAndGetNumber.welcome();
 		int input = WelcomeAndGetNumber.getNumber();
-//		MathematicalCalculation.eulersLine(input);
+		MathematicalCalculation.eulersLine(input);
 //		MathematicalCalculation.vietleLine(input);
 		MathematicalCalculation.liebniz(input);
 	}
