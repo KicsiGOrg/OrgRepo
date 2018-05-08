@@ -2,8 +2,9 @@
 public class MathematicalCalculation {
 
 	public static void eulersLine(int input) {
-		System.out.println("------------------Euler féle sor-------------------");
-		System.out.println("\u03C0\u00b2 / 6 = 1,644934066848226436472415166646");
+		System.out.println("\n-----------------------Euler féle sor-----------------------");
+		double x = Math.pow(Math.PI, 2) / 6;
+		System.out.println("\u03C0\u00b2 / 6 = " + x);
 		double denominator = 2.0;
 		double a = 0.0;
 		for (int i = 0; i < input; i++) {
@@ -15,34 +16,64 @@ public class MathematicalCalculation {
 	}
 
 	public static void vietleLine(int input) {
-		System.out.print("\nViètel féle sor alapján a 2 / \u03C0 közelítő értéke = ");
+		System.out.println("\n-----------------------Viètel féle sor-----------------------");
+		double x = 2 / Math.PI;
+		System.out.println("\n2 / \u03C0 = " + x);
 		double counter = Math.sqrt(2.0);
+		double denominator = 2.0;
 		double a = 0.0;
-		for (int i = 1; i <= input; i++) {
-			if (i == 1) {
-				a = counter;
-			} else {
-				a = ((a) * (Math.sqrt(2.0 + counter)));
-			}
-		}
-		a = a / (Math.pow(2, input));
-		System.out.print(a);
-	}
-	public static void liebniz(int input) {
-		System.out.println("\n---------------Liebniz féle sor----------------");
-		System.out.println("\u03C0 / 4 = 0,78539816339744830961566084581988");
-		double denominator = 3.0;
-		double a = 0.0;
-		for(int i = 1; i <= input; i++) {
-			if(i % 2 == 0) {
-				a = a - (1 / denominator);
-				denominator+=2;
+		for (int i = 0; i < input; i++) {
+			if(i == 0) {
+				a = counter / 2;
 			}else {
-				a = a + (1.0 / denominator);
-				denominator+=2;
+				denominator = denominator * 2;
+				a = (a * (Math.sqrt(2.0 + a)) / denominator);
 			}
 		}
-		a = 1 - a;
+//		a = a / denominator;
+		System.out.println("Viètel féle sor alapján a közelítő érték \u2243 " + a);
+	}
+
+	public static void liebniz(int input) {
+		System.out.println("\n----------------------Liebniz féle sor-----------------------");
+		double x = Math.PI / 4;
+		System.out.println("\u03C0 / 4 = " + x);
+		double denominator = 3.0;
+		double a = 1.0;
+		for (int i = 1; i < input; i++) {
+			if (i % 2 == 0) {
+				a = a + (1 / denominator);
+				denominator += 2;
+			} else {
+				a = a - (1.0 / denominator);
+				denominator += 2;
+			}
+		}
 		System.out.println("Liebniz féle sor alapján a közelítő érték \u2243 " + a);
+	}
+
+	public static void wallisLine(int input) {
+		System.out.println("\n-----------------------Wallis féle sor-----------------------");
+		double x = Math.PI / 2;
+		double counter = 2.0;
+		double denominator = 1.0;
+		double a = 0.0;
+		System.out.println("\u03C0 / 2 = " + x);
+		for(int i = 0; i < input; i++) {
+			if(i == 0 ) {
+				a = counter / denominator;
+				denominator += 2;
+			}else {
+				if(i % 2 == 0) {
+					a = a * (counter / denominator);
+					denominator+=2;
+				}
+				else {
+					a = a * (counter / denominator);
+					counter+=2;
+				}
+			}
+		}
+		System.out.println("Wallis féle sor alapján a közelítő érték \u2243 :" + a);
 	}
 }

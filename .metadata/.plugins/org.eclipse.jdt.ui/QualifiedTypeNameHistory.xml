@@ -26,7 +26,6 @@
 <fullyQualifiedTypeName name="java.security.NoSuchAlgorithmException"/>
 <fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
 <fullyQualifiedTypeName name="WelcomeAndGetNumber"/>
-<fullyQualifiedTypeName name="MathematicalCalculation"/>
 <fullyQualifiedTypeName name="jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode"/>
 <fullyQualifiedTypeName name="sun.tools.asm.CatchData"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.dom.PSVIDOMImplementationImpl"/>
+<fullyQualifiedTypeName name="MathematicalCalculation"/>
 </qualifiedTypeNameHistroy>
