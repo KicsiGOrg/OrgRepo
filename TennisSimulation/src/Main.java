@@ -17,6 +17,7 @@ public class Main {
 		playerTwo.setName(new Name("Rafael", "Nadal"));
 		int playerOnePoint = 0;
 		int playerTwoPoint = 0;
+		boolean endOfSet = false;
 		for(int i = 0; i < 3; i++) {
 			do{
 				int point = random.nextInt((2 - 1) + 1);
@@ -25,8 +26,15 @@ public class Main {
 				}else {
 					playerTwoPoint++;
 				}
-			}while(playerOnePoint < 6 && playerTwoPoint < 6);
-			System.out.println(playerOne.getName() + " - " + playerOnePoint + " vs. " + playerTwo.getName() + " - " + playerTwoPoint);
+				if(playerOnePoint != 0 && playerOnePoint  > (playerTwoPoint-2)) {
+					System.out.println(playerOne.getName() + " győzött " + playerOnePoint + " : " + playerTwoPoint + " ponttal." );
+					endOfSet = true;
+				}else if (playerTwoPoint != 0 && playerTwoPoint  > (playerOnePoint-2)){
+					System.out.println(playerTwo.getName() + " győzött " + playerTwoPoint + " : " + playerOnePoint + " ponttal." );
+					endOfSet = true;
+				}
+			}while(playerOnePoint > 6 && playerTwoPoint > 6 && !endOfSet);
+//			System.out.println(playerOne.getName() + " - " + playerOnePoint + " vs. " + playerTwo.getName() + " - " + playerTwoPoint);
 		}
 
 		
