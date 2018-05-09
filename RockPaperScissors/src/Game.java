@@ -73,7 +73,7 @@ public class Game {
 	 */
 	public static HashMap<Integer, Integer> selectFromTheMenu() {
 		int endOfPoint;
-		int endOfRound;
+		int endOfRound = 0;
 		HashMap<Integer, Integer> response = new HashMap<Integer, Integer>();
 		do {
 			try {
@@ -91,11 +91,16 @@ public class Game {
 		switch (menuIndex) {
 		case 1:
 			do {
-				System.out.print("Add meg hány körig menjen a játék: ");
-				endOfRound = sc.nextInt();
-				sc.nextLine();
-				if (endOfRound < 1) {
-					System.out.println("A megadott szám túl kicsi, kérem 0-nál nagyobb számot adjon meg!");
+				try {
+					System.out.print("Add meg hány körig menjen a játék: ");
+					endOfRound = sc.nextInt();
+					sc.nextLine();
+					if (endOfRound < 1) {
+						System.out.println("A megadott szám túl kicsi, kérem 0-nál nagyobb számot adjon meg!");
+					}
+				} catch (Exception e) {
+					sc.nextLine();
+					System.out.println("A megadot input nem értelmezett.");
 				}
 			} while (endOfRound < 1);
 			response.put(menuIndex, endOfRound);

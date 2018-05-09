@@ -46,15 +46,9 @@ public class PlayMode {
 	 * 
 	 */
 	public static void game(User userA, User userB, int playModeMenuNumber, HashMap<Integer, Integer> gameOverIndex) {
-		if(playModeMenuNumber == 1) {
 			userA = new User(1, playModeMenuNumber);
 			userB = new User(2, playModeMenuNumber);
 			Game.gamePlay(userA, userB, gameOverIndex, playModeMenuNumber);
-		}else {
-			userA = new User(1, playModeMenuNumber);
-			userB = new User(2, playModeMenuNumber);
-			Game.gamePlay(userA, userB, gameOverIndex, playModeMenuNumber);
-		}
 		Game.printStatistics(userA, userB);
 	}
 }

@@ -41,5 +41,8 @@ public class Name {
 		this.lastName = lastName;
 	}
 	
-	
+	public String toString() {
+		return (prefix != null ? prefix.getTextual() + " " : "") + firstName + " " + lastName;
+	}
+
 }
