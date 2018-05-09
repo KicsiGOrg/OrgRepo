@@ -1,3 +1,4 @@
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -72,7 +73,7 @@ public class Game {
 	 *         hány győztes menetig menjen a játék.
 	 */
 	public static HashMap<Integer, Integer> selectFromTheMenu() {
-		int endOfPoint;
+		int endOfPoint = 0;
 		int endOfRound = 0;
 		HashMap<Integer, Integer> response = new HashMap<Integer, Integer>();
 		do {
@@ -107,11 +108,16 @@ public class Game {
 			break;
 		case 2:
 			do {
-				System.out.print("Add meg hány pontig menjen a játék: ");
-				endOfPoint = sc.nextInt();
-				sc.nextLine();
-				if (endOfPoint < 1) {
-					System.out.println("A megadott szám túl kicsi, kérem 0-nál nagyobb számot adjon meg!");
+				try {
+					System.out.print("Add meg hány pontig menjen a játék: ");
+					endOfPoint = sc.nextInt();
+					sc.nextLine();
+					if (endOfPoint < 1) {
+						System.out.println("A megadott szám túl kicsi, kérem 0-nál nagyobb számot adjon meg!");
+					}
+				} catch (Exception e) {
+					sc.nextLine();
+					System.out.println("A megadott menüpont nem értelmezett.");
 				}
 			} while (endOfPoint < 1);
 			response.put(menuIndex, endOfPoint);
