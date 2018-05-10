@@ -1,19 +1,18 @@
 
-public class Name {
+public enum Names {
+	ROGER_FEDERER("Roger Federer"), RAFAEL_NADAL("Rafael Nadal"), 
+	NOVAK_ĐOKOVIĆ("Novak Đoković"), PETE_SAMPRAS("Pete Sampras"), 
+	ANDRE_AGASSI("Andre Agassi"), BJÖRN_BORG("Björn Borg"), 
+	BORIS_BECKER("Boris Becker"), ANDY_RODDICK("Andy Roddick");
 
-	private Names names;
-	
-	public Names getNames() {
-		return names;
+	private String textual;
+
+	private Names(String text) {
+		textual = text;
 	}
 
-	public void setNames(Names names) {
-		this.names = names;
-	}
-	
-	public String toString() {
-//		return (prefix != null ? prefix.getTextual() + " " : "") + firstName + " " + lastName;
-		return (names.getTextual())+"";
-	}
+	public String getTextual() {
+		return textual;
 
+	}
 }
