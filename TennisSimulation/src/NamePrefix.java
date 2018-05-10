@@ -10,6 +10,5 @@ public enum NamePrefix {
 	
 	public String getTextual() {
 		return textual;
-		
 	}
 }

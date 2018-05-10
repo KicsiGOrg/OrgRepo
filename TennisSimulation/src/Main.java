@@ -13,35 +13,61 @@ public class Main {
 		Player playerOne = new Player();
 		Player playerTwo = new Player();
 
-		playerOne.setName(new Name("Andre", "Agassi"));
-		playerTwo.setName(new Name("Rafael", "Nadal"));
+//		playerOne.setName(new Name());
+		playerOne.getName(Names.ANDRE_AGASSI);
+		playerTwo.setName(new Name(-----));
 		int playerOnePoint = 0;
+		int playerOneSet = 0;
+		int playerTwoSet = 0;
 		int playerTwoPoint = 0;
-		boolean endOfSet = false;
-		for(int i = 0; i < 3; i++) {
-			do{
-				int point = random.nextInt((2 - 1) + 1);
-				if(point == 0) {
-					playerOnePoint++;
-				}else {
-					playerTwoPoint++;
+		int endOfset = 6;
+		int i = 1;
+		do {
+			System.out.println(i + " szett.");
+			do {
+				int pointOne = random.nextInt(2);
+				int pointTwo = random.nextInt(2);
+				if (pointOne == pointTwo) {
+					continue;
+				} else {
+					if (pointOne == 0) {
+						playerOnePoint++;
+					} else {
+						playerTwoPoint++;
+					}
+					if (playerOnePoint != 0) {
+						System.out.println(playerOne.getName() + " " + playerOnePoint + " | " + playerTwo.getName()
+								+ " " + playerTwoPoint);
+					} else {
+						System.out.println(playerTwo.getName() + " " + playerTwoPoint + " | " + playerOne.getName()
+								+ " " + playerOnePoint);
+					}
 				}
-				if(playerOnePoint != 0 && playerOnePoint  > (playerTwoPoint-2)) {
-					System.out.println(playerOne.getName() + " győzött " + playerOnePoint + " : " + playerTwoPoint + " ponttal." );
-					endOfSet = true;
-				}else if (playerTwoPoint != 0 && playerTwoPoint  > (playerOnePoint-2)){
-					System.out.println(playerTwo.getName() + " győzött " + playerTwoPoint + " : " + playerOnePoint + " ponttal." );
-					endOfSet = true;
+				if (playerOnePoint == endOfset || playerTwoPoint == endOfset) {
+					if (playerOnePoint == endOfset) {
+						if (playerOnePoint - 1 == playerTwoPoint) {
+							endOfset++;
+						} else {
+							break;
+						}
+					} else {
+						if (playerTwoPoint - 1 == playerOnePoint) {
+							endOfset++;
+						} else {
+							break;
+						}
+					}
 				}
-			}while(playerOnePoint > 6 && playerTwoPoint > 6 && !endOfSet);
-//			System.out.println(playerOne.getName() + " - " + playerOnePoint + " vs. " + playerTwo.getName() + " - " + playerTwoPoint);
-		}
-
-		
-		
-		
-		
+			} while (playerOnePoint != endOfset && playerTwoPoint != endOfset);
+			if(playerOnePoint > playerTwoPoint) {
+				playerOneSet++;
+			}else {
+				playerTwoSet++;
+			}
+			playerOnePoint = 0;
+			playerTwoPoint = 0;
+			i++;
+		} while (playerOneSet < 3 && playerTwoSet < 3);
 		sc.close();
 	}
-
 }

@@ -1,6 +1,6 @@
 
 public class Player {
-
+	
 	private Name name;
 	
 	public Name getName() {
