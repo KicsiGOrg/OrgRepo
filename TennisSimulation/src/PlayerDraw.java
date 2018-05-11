@@ -19,9 +19,8 @@ public class PlayerDraw {
 	static Random random = new Random();
 	
 	public static void randomPlayer() {
-		int i;
-		boolean contains = true;
-		for (i = 0; i < 7; i++) {
+		boolean contains;
+		for (int i = 0; i < 7; i++) {
 			do {
 				index = random.nextInt(nameArray.length);
 				contains = IntStream.of(indexOfArray).anyMatch(x -> x == index);
