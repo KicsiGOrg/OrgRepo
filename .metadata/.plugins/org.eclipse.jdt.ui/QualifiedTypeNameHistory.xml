@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="java.lang.NegativeArraySizeException"/>
-<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
 <fullyQualifiedTypeName name="javafx.collections.WeakListChangeListener"/>
 <fullyQualifiedTypeName name="User"/>
 <fullyQualifiedTypeName name="ITest"/>
@@ -58,6 +55,9 @@
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="Tournaments"/>
 <fullyQualifiedTypeName name="Welcome"/>
-<fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="Player"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="sun.font.CreatedFontTracker"/>
+<fullyQualifiedTypeName name="java.util.stream.IntStream"/>
+<fullyQualifiedTypeName name="PlayerDraw"/>
 </qualifiedTypeNameHistroy>

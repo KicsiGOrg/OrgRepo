@@ -1,25 +1,9 @@
 import java.util.Random;
 
-public class Game {
+public class GameTwo {
 
 	static Random random = new Random();
-
-	/**
-	 * Játék
-	 * 
-	 * @param playerOne
-	 * @param playerTwo
-	 * 
-	 *            A Player osztályban legenerált két játékos tenisz meccsének
-	 *            mutatása a megszerzett pontok alapján. A szetten belüli
-	 *            győzelmekért random generátor felel. A játék 6 pontig megy, kivéve
-	 *            ha 6 - 6 az eredmény vagy 6 - 5, akkor a játék addig megy, amíg 2
-	 *            pont különbség nem lesz a pontok között. A szettek előtt kiírja a
-	 *            program, hogy hányadik szett következik, illetve a szett végén a
-	 *            győztes nevét. Amint az egyik játékos eléri a 3 szettes győzelmet
-	 *            a körnek vége és kiírásra kerül a győztes neve illetve, hogy
-	 *            mennyivel nyert.
-	 */
+	
 	public static void game(Player playerOne, Player playerTwo) {
 		int playerOnePoint = 0;
 		int playerOneSet = 0;
@@ -76,4 +60,5 @@ public class Game {
 		} while (playerOneSet < 3 && playerTwoSet < 3);
 		Printer.printWinner(playerOne, playerTwo, playerOneSet, playerTwoSet);
 	}
+	
 }

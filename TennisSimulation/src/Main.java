@@ -5,9 +5,13 @@ public class Main {
 
 		Player playerOne = new Player();
 		Player playerTwo = new Player();
+		PlayerDraw.randomPlayer();
+		PlayerDraw.fillPairArrays();
 		Player.creatPlayer(playerOne, playerTwo);
-		Welcome.welcome();
-		Welcome.players(playerOne, playerTwo);
-		Game.game(playerOne, playerTwo);
+		Printer.welcome();
+		PlayerDraw.print();
+		Printer.players(playerOne, playerTwo);
+//		Game.game(playerOne, playerTwo);
+//		GameTwo.game(playerOne, playerTwo);
 	}
 }
